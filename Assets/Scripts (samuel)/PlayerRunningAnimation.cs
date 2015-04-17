@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerLegsAnimation : MonoBehaviour {
+public class PlayerRunningAnimation : MonoBehaviour {
 
 	public float legWigglePerSecond = 2;
 	public float legExtentInDegrees = 45;
@@ -19,6 +19,7 @@ public class PlayerLegsAnimation : MonoBehaviour {
 		float wiggles = legWigglePerSecond * t;
 		float angle = Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
 
+		GameObject playerBody = GameObject.Find("Body");
 		GameObject leftLeg = GameObject.Find("Left leg");
 		GameObject rightLeg = GameObject.Find("Right leg");
 

@@ -11,7 +11,9 @@ public class TreeState : MonoBehaviour {
 
 	public float secondsUntilGrownSprout = 1;
 	public float secondsBetweenGrowthPhases = 0.5f;
-	public float springStrength = 1;
+	public float springStrength = 50;
+	public float springDamping = 10;
+	public float sproutPhaseTargetScale = 1;
 	public float springPhaseInitialScale = 0.1f;
 	public float springPhaseTargetScale = 1f;
 
@@ -38,9 +40,11 @@ public class TreeState : MonoBehaviour {
 	GameObject grown;
 	GameObject stump;
 
-	float t = 0;
 	bool isSprouting = false;
-	int animationPhase = 0;
+	float t;
+	int animationPhase;
+	float scalePosition;
+	float scaleVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -66,7 +70,7 @@ public class TreeState : MonoBehaviour {
 				if (fraction >= 1) fraction = 1;
 				fraction = Mathf.Sqrt(fraction); // slow down towards the end
 
-				float scaleFactor = fraction;
+				float scaleFactor = fraction * sproutPhaseTargetScale;
 
 				sprout.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
 
@@ -88,11 +92,24 @@ public class TreeState : MonoBehaviour {
 
 					float scaleFactor = springPhaseInitialScale;
 					grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+
+					scalePosition = springPhaseInitialScale;
+					scaleVelocity = 0;
 				}
 				break;
 			}
 			case 2:
+			{
+				// spring to full size
+
+				float acceleration = springStrength * (springPhaseTargetScale - scalePosition) - springDamping * scaleVelocity;
+				scaleVelocity = scaleVelocity + acceleration * Time.deltaTime;
+				scalePosition = scalePosition + scaleVelocity * Time.deltaTime;
+				
+				float scaleFactor = scalePosition;
+				grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
 				break;
+			}
 			}
 		}
 	}

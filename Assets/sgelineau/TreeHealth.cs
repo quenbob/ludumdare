@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TreeHealth : MonoBehaviour {
 
-	public float currentHealth = 100.0f;
+	public float currentHealth = 30.0f;
 
 	// Use this for initialization
 	void Start () {

@@ -9,6 +9,12 @@ public class TreeState : MonoBehaviour {
 
 	public TreeStateEnum initialState = TreeStateEnum.Grown;
 
+	public float secondsUntilGrownSprout = 1;
+	public float secondsBetweenGrowthPhases = 1;
+	public float springStrength = 1;
+	public float springPhaseInitialScale = 0.1f;
+
+
 	private TreeStateEnum privateState;
 	public TreeStateEnum currentState {
 		get { return privateState; }

@@ -35,7 +35,7 @@ public class TreeFalling : MonoBehaviour {
 				if (alpha < 0) {
 					alpha = 0;
 					Destroy (gameObject);
-
+					
 					GameObject logSpawner = GameObject.Find("LogSpawner");
 					if (logSpawner) {
 						logSpawner.GetComponent<LogSpawning>().spawnLog();
@@ -65,9 +65,15 @@ public class TreeFalling : MonoBehaviour {
 			animationPhase = 0;
 
 			// increment score
-			GameObject scoreObject = GameObject.Find("Score");
-			if (scoreObject) {
-				scoreObject.GetComponent<ScoreKeeper>().Score(1);
+			GameObject scoreLabel = GameObject.Find("Canvas/ScoreLabel");
+			if (scoreLabel) {
+				scoreLabel.GetComponent<ScoreManager>().AddScore(1);
+			}
+
+			// give the player more time
+			GameObject timerLabel = GameObject.Find("Canvas/TimerLabel");
+			if (timerLabel) {
+				timerLabel.GetComponent<TimerManager>().AddTime(5);
 			}
 		}
 	}

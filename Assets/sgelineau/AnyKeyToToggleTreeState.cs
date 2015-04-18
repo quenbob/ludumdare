@@ -10,7 +10,7 @@ public class AnyKeyToToggleTreeState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject tree = GameObject.Find ("Tree");
+		GameObject tree = GameObject.Find ("Tree/Model");
 		TreeState treeState = tree.GetComponent<TreeState> ();
 
 		if (Input.anyKeyDown) {

@@ -59,10 +59,10 @@ MonoBehaviour:
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: .100000001
   timeBetweenTwoSpawn: 1
-  xMin: -10
-  xMax: 10
-  zMin: -10
-  zMax: 10
+  xMin: -100
+  xMax: 100
+  zMin: -100
+  zMax: 100
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
 --- !u!1001 &100100000

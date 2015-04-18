@@ -8,8 +8,13 @@ public class PlayerRunningAnimation : MonoBehaviour {
 	public float bounceHeight = 0.1f;
 
 	private bool isRunning = false;
+
 	private bool rightLegFirst = true;
 	private float t = 0;
+
+	private float lastWiggles = 0;
+	private float targetWiggles = 0;
+
 
 	public void startRunning() {
 		if (!isRunning) {
@@ -20,7 +25,7 @@ public class PlayerRunningAnimation : MonoBehaviour {
 	
 	public void stopRunning() {
 		if (isRunning) {
-			t = 0;
+			targetWiggles = Mathf.Ceil(lastWiggles);
 			isRunning = false;
 			rightLegFirst = !rightLegFirst;
 		}
@@ -33,11 +38,15 @@ public class PlayerRunningAnimation : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		float wiggles;
 		if (isRunning) {
 			t += Time.deltaTime;
+			wiggles = legWigglePerSecond * t;
+		} else {
+			wiggles = lastWiggles + (targetWiggles - lastWiggles) * 0.5f;
 		}
 
-		float wiggles = legWigglePerSecond * t;
+		lastWiggles = wiggles;
 		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
 		float height = Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
 

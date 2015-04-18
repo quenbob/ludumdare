@@ -124,11 +124,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .375, g: .2640571, b: .165441185, a: 1}
-    m_PressedColor: {r: .507352948, g: .220436111, b: 0, a: .698039234}
+    m_NormalColor: {r: .239965364, g: .558823526, b: .160250857, a: .501960814}
+    m_HighlightedColor: {r: 0, g: .654411793, b: .194067091, a: 1}
+    m_PressedColor: {r: .386409879, g: 1, b: .191176474, a: .698039234}
     m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
+    m_ColorMultiplier: 1.5
     m_FadeDuration: .100000001
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: d2f413dae00048b4ab9463b65f96d2e1, type: 3}
-    m_FontSize: 35
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: d2f413dae00048b4ab9463b65f96d2e1, type: 3}
-    m_FontSize: 35
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -665,11 +665,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .375, g: .2640571, b: .165441185, a: 1}
-    m_PressedColor: {r: .507352948, g: .220436111, b: 0, a: .698039234}
+    m_NormalColor: {r: .239965364, g: .558823526, b: .160250857, a: .501960814}
+    m_HighlightedColor: {r: 0, g: .654411793, b: .194067091, a: 1}
+    m_PressedColor: {r: .386409879, g: 1, b: .191176474, a: .698039234}
     m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
+    m_ColorMultiplier: 1.5
     m_FadeDuration: .100000001
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}

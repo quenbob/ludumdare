@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1f3ab363db8ac419749b223131cb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeObject: {fileID: 105638, guid: 594698f07a8290d468da68db57c048d5, type: 2}
-  timeBeforeFirstSpawn: 3
-  timeBetweenTwoSpawn: 3
+  treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
+  timeBeforeFirstSpawn: 1
+  timeBetweenTwoSpawn: 1
   xMin: -10
   xMax: 10
   zMin: -10

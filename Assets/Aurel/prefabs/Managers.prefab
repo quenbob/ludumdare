@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: .100000001
-  timeBetweenTwoSpawn: .100000001
+  timeBetweenTwoSpawn: 1
   xMin: -100
   xMax: 100
   zMin: -100

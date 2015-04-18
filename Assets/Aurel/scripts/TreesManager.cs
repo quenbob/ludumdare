@@ -33,8 +33,15 @@ public class TreesManager : MonoBehaviour {
 			pos = new Vector3(Random.Range (xMin, xMax), 0.0f, Random.Range (zMin, zMax));
 			Collider[] cols = Physics.OverlapSphere(pos, clearRadiusAroundNewSpawn);
 
-			if (cols.Length == 0)
-				ok = true;
+			ok = true;
+			foreach (var col in cols)
+			{
+				if (col.attachedRigidbody && col.attachedRigidbody.gameObject.tag == "Tree")
+				{
+					ok = false;
+					break;
+				}
+			}
 		}
 
 		if (ok)

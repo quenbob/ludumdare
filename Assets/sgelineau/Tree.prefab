@@ -300,7 +300,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e977d36d69021f5408553157fb5fd51c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -348,7 +348,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e977d36d69021f5408553157fb5fd51c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912cff72b91fcf8459d76754d9fa26b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallingStrength: 200
 --- !u!114 &11435652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c608c11093ee3ea46a8bea7605b77fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialState: 1
+  initialState: 0
   secondsUntilGrownSprout: 1
   secondsBetweenGrowthPhases: .5
   springStrength: 50

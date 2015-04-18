@@ -7,7 +7,7 @@ public enum TreeStateEnum {
 
 public class TreeState : MonoBehaviour {
 
-	public TreeStateEnum initialState = TreeStateEnum.Grown;
+	public TreeStateEnum initialState = TreeStateEnum.Sprout;
 
 	public float secondsUntilGrownSprout = 1;
 	public float secondsBetweenGrowthPhases = 0.5f;
@@ -18,7 +18,7 @@ public class TreeState : MonoBehaviour {
 	public float springPhaseTargetScale = 1f;
 
 
-	private TreeStateEnum privateState;
+	private TreeStateEnum privateState = TreeStateEnum.Grown;
 	public TreeStateEnum currentState {
 		get { return privateState; }
 		set {

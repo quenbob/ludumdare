@@ -57,6 +57,12 @@ public class TreeFalling : MonoBehaviour {
 			isDying = true;
 			t = 0;
 			animationPhase = 0;
+
+			// increment score
+			GameObject scoreObject = GameObject.Find("Score");
+			if (scoreObject) {
+				scoreObject.GetComponent<ScoreKeeper>().Score(1);
+			}
 		}
 	}
 }

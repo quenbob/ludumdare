@@ -1,4 +1,4 @@
-﻿Shader "Randomchaos/Tutorial/SSOutline" 
+﻿Shader "Custom/CellShaderHeavy"
 {
 	Properties 
 	{

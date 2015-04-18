@@ -281,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.31999993, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466058}
@@ -535,11 +535,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
+  useGrownModelAsSproutModel: 1
   secondsUntilGrownSprout: 1
   secondsBetweenGrowthPhases: .5
   springStrength: 50
   springDamping: 3
-  sproutPhaseTargetScale: 1
+  sproutPhaseTargetScale: .100000001
   springPhaseInitialScale: .100000001
   springPhaseTargetScale: 1
 --- !u!114 &11456766

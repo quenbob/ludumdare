@@ -10,7 +10,13 @@ public class PlayerAttack : MonoBehaviour {
 	float timer;
 	TreeHealth health;
 	TreeState state;
-	
+	AudioSource chompAudio;
+
+	void Awake ()
+	{
+		chompAudio = GetComponent <AudioSource> ();
+	}
+
 	void OnTriggerEnter (Collider other)
 	{
 		if(other.gameObject.tag == "Tree")
@@ -48,6 +54,7 @@ public class PlayerAttack : MonoBehaviour {
 		
 		if(health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
 		{
+			chompAudio.Play ();
 			health.TakeDamage(attackDamage, transform.position);
 		}
 	}

@@ -65,6 +65,9 @@ MonoBehaviour:
   zMax: 100
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
+  radiusAroundPlayer: 50
+  groundHeight: 0
+  player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

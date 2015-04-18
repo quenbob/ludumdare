@@ -483,6 +483,10 @@ Prefab:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 192010, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+      propertyPath: m_Name
+      value: ScoreLabel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
   m_IsPrefabParent: 0

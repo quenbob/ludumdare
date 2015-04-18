@@ -11,13 +11,13 @@ public class ScoreManager : MonoBehaviour {
 	void Start () {
 		scoreLabel = GetComponent <Text> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		scoreLabel.text = "Score: " + currentScore;
 	}
 
-	void AddScore(int amount)
+	public void AddScore(int amount)
 	{
 		currentScore += amount;
 	}

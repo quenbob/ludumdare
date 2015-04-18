@@ -10,9 +10,10 @@ public class TreeState : MonoBehaviour {
 	public TreeStateEnum initialState = TreeStateEnum.Grown;
 
 	public float secondsUntilGrownSprout = 1;
-	public float secondsBetweenGrowthPhases = 1;
+	public float secondsBetweenGrowthPhases = 0.5f;
 	public float springStrength = 1;
 	public float springPhaseInitialScale = 0.1f;
+	public float springPhaseTargetScale = 1f;
 
 
 	private TreeStateEnum privateState;
@@ -53,23 +54,42 @@ public class TreeState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isSprouting) {
-			// animate the growth of the sprout
+			// animate the growth of the tree
 			t += Time.deltaTime;
 
 			switch (animationPhase) {
 			case 0:
-				float scaleFactor = t;
-				if (scaleFactor >= 1) scaleFactor = 1;
+			{
+				// sprout growth
+
+				float fraction = t / secondsUntilGrownSprout;
+				if (fraction >= 1) fraction = 1;
+
+				float scaleFactor = fraction;
 
 				sprout.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
 
-				if (scaleFactor == 1) {
+				if (t >= secondsUntilGrownSprout) {
 					t = 0;
-					animationPhase = 1;
+					++animationPhase;
 				}
 				break;
+			}
 			case 1:
+			{
+				// pause between the two phases
+
+				if (t >= secondsBetweenGrowthPhases) {
+					t = 0;
+					++animationPhase;
+
+					currentState = TreeStateEnum.Grown;
+
+					float scaleFactor = springPhaseInitialScale;
+					grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+				}
 				break;
+			}
 			case 2:
 				break;
 			}

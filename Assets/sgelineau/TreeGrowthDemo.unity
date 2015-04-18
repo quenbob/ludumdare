@@ -721,3 +721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 1
+  secondsUntilGrownSprout: 1
+  secondsBetweenGrowthPhases: .5
+  springStrength: 1
+  springPhaseInitialScale: .100000001
+  springPhaseTargetScale: 1

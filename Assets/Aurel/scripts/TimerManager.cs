@@ -19,7 +19,8 @@ public class TimerManager : MonoBehaviour {
 		int sec = (int)(timeRemaining - min*60);
 		string dixs = (sec < 10) ? "0" : "";
 		string dixm = (min < 10) ? "0" : "";
-		timeLabel.text = "Time: " + dixm + min + ":" + dixs + sec;
+	
+		timeLabel.text = "Time: " + dixm + min + ":" + dixs + ((sec > 0) ? sec : 0).ToString();
 
 		if(Time.realtimeSinceStartup > startTime)
 		{

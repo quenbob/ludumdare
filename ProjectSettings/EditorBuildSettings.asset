@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/fmayrand/Scenes/Start Menu.unity
   - enabled: 1
     path: Assets/bquenneville/Level1.unity
+  - enabled: 1
+    path: Assets/fmayrand/Scenes/Lose Screen.unity

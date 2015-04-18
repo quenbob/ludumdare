@@ -33,6 +33,11 @@ public class TreeFalling : MonoBehaviour {
 				if (alpha < 0) {
 					alpha = 0;
 					Destroy (gameObject);
+
+					GameObject logSpawner = GameObject.Find("LogSpawner");
+					if (logSpawner) {
+						logSpawner.GetComponent<LogSpawning>().spawnLog();
+					}
 				} else {
 					transform.Find ("Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 					transform.Find ("Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);

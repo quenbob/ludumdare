@@ -4,17 +4,33 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour {
 
 	public float timeBetweenAttacks = 0.5f;
-	public int attackDamage = 10;
-	
-	bool treeInRange;
+	public int attackDamage = 10;	
 	float timer;
 	TreeHealth health;
 	TreeState state;
 	AudioSource chompAudio;
+	PlayerMovement playerMovement;
+	public bool treeInRange
+	{
+		get { return m_treeInRange; }
+		set 
+		{ 
+			if (value != m_treeInRange)
+			{
+				m_treeInRange = value;
+				playerMovement.TreeInRange(treeInRange) ;
+			}
+		}
+	}
+
+	private bool m_treeInRange = false;
+
+
 
 	void Awake ()
 	{
 		chompAudio = GetComponent <AudioSource> ();
+		playerMovement = GetComponent<PlayerMovement>();
 	}
 
 	void OnTriggerEnter (Collider other)
@@ -56,6 +72,10 @@ public class PlayerAttack : MonoBehaviour {
 		{
 			chompAudio.Play ();
 			health.TakeDamage(attackDamage, transform.position);
+		}
+		else
+		{
+			treeInRange = false;
 		}
 	}
 }

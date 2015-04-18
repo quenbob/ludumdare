@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	private Vector3 movement;
 	private Rigidbody playerRigidbody;
+	private PlayerAttack playerAttack;
+	private float recordedH;
+	private float recordedV;
+	private bool recorded = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +22,19 @@ public class PlayerMovement : MonoBehaviour {
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 
-		Move (h, v);
+		if (recorded)
+		{
+			if (h != recordedH || v != recordedV)
+				recorded = false;
+		}
 
-		if (h != 0 || v != 0)
-			Turn(h, v);	
+		if (!recorded)
+		{
+			Move (h, v);
+
+			if (h != 0 || v != 0)
+				Turn(h, v);	
+		}
 	}
 
 	void Move (float h, float v)
@@ -36,5 +49,12 @@ public class PlayerMovement : MonoBehaviour {
 		Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
 		Quaternion newRotation = Quaternion.Lerp(playerRigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
 		playerRigidbody.MoveRotation(newRotation);
+	}
+
+	public void TreeInRange(bool inRange)
+	{
+		recordedH = Input.GetAxisRaw ("Horizontal");
+		recordedV = Input.GetAxisRaw ("Vertical");
+		recorded = inRange;
 	}
 }

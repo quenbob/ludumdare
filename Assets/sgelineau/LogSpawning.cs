@@ -6,7 +6,8 @@ public class LogSpawning : MonoBehaviour {
 	public GameObject objectToSpawn;
 
 	public void spawnLog() {
-		Instantiate(objectToSpawn, transform.position, transform.rotation);
+		float angle = Random.Range (0, 360);
+		Instantiate(objectToSpawn, transform.position, Quaternion.Euler(0,angle,0));
 	}
 
 	// Use this for initialization

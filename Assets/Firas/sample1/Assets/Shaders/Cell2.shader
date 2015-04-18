@@ -18,7 +18,7 @@
 
 
 		// Outline pass
-        Cull Front
+        //Cull Front
 
         CGPROGRAM
         #pragma surface surf LineLit vertex:vert Lambda alpha
@@ -170,7 +170,7 @@
         }
         ENDCG
         
-        
+       // Cull Front
         		// Geom pass
         CGPROGRAM
         #pragma surface surf SimpleDiffuse Lambert alpha

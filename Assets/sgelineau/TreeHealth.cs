@@ -19,5 +19,12 @@ public class TreeHealth : MonoBehaviour {
 	{
 		ParticleSystem ps = transform.Find("WoodChips").gameObject.GetComponent<ParticleSystem>();
 		ps.Play(true);
+
+		currentHealth -= amount;
+		if (currentHealth <= 0) {
+			currentHealth = 0;
+
+			GetComponent<TreeFalling>().cutDownFrom(playerPosition);
+		}
 	}
 }

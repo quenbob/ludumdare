@@ -34,8 +34,8 @@ public class TreeFalling : MonoBehaviour {
 					alpha = 0;
 					Destroy (gameObject);
 				} else {
-					transform.Find ("Model/Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
-					transform.Find ("Model/Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find ("Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find ("Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 				}
 				break;
 			}

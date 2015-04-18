@@ -7,17 +7,31 @@ public enum TreeStateEnum {
 
 public class TreeState : MonoBehaviour {
 
-	public TreeStateEnum currentState = TreeStateEnum.Grown;
+	public TreeStateEnum initialState = TreeStateEnum.Grown;
 
+	private TreeStateEnum privateState;
+	public TreeStateEnum currentState {
+		get { return privateState; }
+		set {
+			privateState = value;
+			
+			sprout.SetActive(privateState == TreeStateEnum.Sprout);
+			grown.SetActive(privateState == TreeStateEnum.Grown);
+			stump.SetActive(privateState == TreeStateEnum.Stump);
+		}
+	}
+
+	GameObject sprout;
+	GameObject grown;
+	GameObject stump;
+	
 	// Use this for initialization
 	void Start () {
-		GameObject sprout = GameObject.Find("Sprout");
-		GameObject grown = GameObject.Find("Grown");
-		GameObject stump = GameObject.Find("Stump");
+		sprout = GameObject.Find("Sprout");
+		grown = GameObject.Find("Grown");
+		stump = GameObject.Find("Stump");
 
-		sprout.SetActive(currentState == TreeStateEnum.Sprout);
-		grown.SetActive(currentState == TreeStateEnum.Grown);
-		stump.SetActive(currentState == TreeStateEnum.Stump);
+		currentState = initialState;
 	}
 	
 	// Update is called once per frame

@@ -18,9 +18,6 @@ public class TreeFalling : MonoBehaviour {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
 			rigidBody.isKinematic = false;
 			rigidBody.AddForce(new Vector3(100,0,0));
-			//rigidBody.AddTorque(new Vector3(1,0,0));
-
-			GetComponent<Collider>().isTrigger = true;
 		}
 	}
 }

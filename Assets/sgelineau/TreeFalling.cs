@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
 
+	public float fallingStrength = 200;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,8 +18,13 @@ public class TreeFalling : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		if (other.collider.gameObject.tag == "Player") {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
+
+			// enable physics while the tree is falling
 			rigidBody.isKinematic = false;
-			rigidBody.AddForce(new Vector3(100,0,0));
+
+			// fall opposite the player
+			Vector3 playerToTree = (this.transform.position - other.transform.position).normalized;
+			rigidBody.AddForce(fallingStrength * playerToTree);
 		}
 	}
 }

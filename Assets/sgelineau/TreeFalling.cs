@@ -18,6 +18,8 @@ public class TreeFalling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//GameObject.Find("Cube").
+
 		if (isDying) {
 			t += Time.deltaTime * 0.2f;
 
@@ -39,8 +41,7 @@ public class TreeFalling : MonoBehaviour {
 						logSpawner.GetComponent<LogSpawning>().spawnLog();
 					}
 				} else {
-					transform.Find ("Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
-					transform.Find ("Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find ("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 				}
 				break;
 			}

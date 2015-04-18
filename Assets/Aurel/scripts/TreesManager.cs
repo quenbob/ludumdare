@@ -13,24 +13,13 @@ public class TreesManager : MonoBehaviour {
 	public bool canSpawn = true ;
 	public float clearRadiusAroundNewSpawn = 5.0f;
 
-	private float x = -50.0f;
-	private float y = 50.0f;
-
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating ("Spawn", timeBeforeFirstSpawn, timeBetweenTwoSpawn);
 	}
 	
 	void Spawn () {
-		Instantiate(treeObject, new Vector3(x, 0.0f, y), Quaternion.identity);
-		x += 6.0f ;
-
-		if (x >= 50.0f)
-		{
-			x = -50.0f;
-			y -= 6.0f;
-		}
-		/*if(!canSpawn)
+		if(!canSpawn)
 		{
 			return;
 		}
@@ -59,6 +48,6 @@ public class TreesManager : MonoBehaviour {
 		{
 			Quaternion rot = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
 			Instantiate(treeObject, pos, rot);
-		}*/
+		}
 	}
 }

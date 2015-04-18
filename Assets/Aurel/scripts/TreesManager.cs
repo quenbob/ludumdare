@@ -13,6 +13,8 @@ public class TreesManager : MonoBehaviour {
 	public bool canSpawn = true ;
 	public float clearRadiusAroundNewSpawn = 5.0f;
 
+	public float groundHeight = 10.0f;
+
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating ("Spawn", timeBeforeFirstSpawn, timeBetweenTwoSpawn);
@@ -30,7 +32,7 @@ public class TreesManager : MonoBehaviour {
 
 		while(!ok && nbTry < 10) {
 			nbTry++;
-			pos = new Vector3(Random.Range (xMin, xMax), 0.0f, Random.Range (zMin, zMax));
+			pos = new Vector3(Random.Range (xMin, xMax), groundHeight, Random.Range (zMin, zMax));
 			Collider[] cols = Physics.OverlapSphere(pos, clearRadiusAroundNewSpawn);
 
 			ok = true;

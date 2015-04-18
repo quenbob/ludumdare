@@ -34,8 +34,6 @@ public class TreeFalling : MonoBehaviour {
 					alpha = 0;
 					Destroy (gameObject);
 				} else {
-					Debug.Log (alpha);
-
 					transform.Find ("Model/Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 					transform.Find ("Model/Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 				}
@@ -45,7 +43,7 @@ public class TreeFalling : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		if (other.collider.gameObject.tag == "Player") {
+		if (other.collider.gameObject.tag == "Player" && !isDying) {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
 
 			// enable physics while the tree is falling

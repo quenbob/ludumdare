@@ -1,4 +1,4 @@
-﻿Shader "Custom/Cell_Transparent"
+﻿Shader "Custom/Cell_Opaque"
 {
 	Properties 
 	{
@@ -11,17 +11,17 @@
 
 	SubShader 
 	{
-		Tags { "RenderType"="Opaque" "Queue" = "Transparent"}
+		Tags {"RenderType"="Opaque" }
 		LOD 200
 		
 
 
 
 		// Outline pass
-        Cull Back
+        Cull Front
 
         CGPROGRAM
-        #pragma surface surf LineLit vertex:vert Lambda alpha
+        #pragma surface surf LineLit vertex:vert
 
         float4 _OutlineColor;
         float _OutlineSize;
@@ -51,7 +51,7 @@
         ENDCG
         
         CGPROGRAM
-        #pragma surface surf LineLit vertex:vert Lambda alpha
+        #pragma surface surf LineLit vertex:vert
 
         float4 _OutlineColor;
         float _OutlineSize;
@@ -81,7 +81,7 @@
         ENDCG
         
         CGPROGRAM
-        #pragma surface surf LineLit vertex:vert Lambda alpha
+        #pragma surface surf LineLit vertex:vert
 
         float4 _OutlineColor;
         float _OutlineSize;
@@ -111,7 +111,7 @@
         ENDCG
         
         CGPROGRAM
-        #pragma surface surf LineLit vertex:vert Lambda alpha
+        #pragma surface surf LineLit vertex:vert
 
         float4 _OutlineColor;
         float _OutlineSize;
@@ -141,7 +141,7 @@
         ENDCG
         
         CGPROGRAM
-        #pragma surface surf LineLit vertex:vert Lambda alpha
+        #pragma surface surf LineLit vertex:vert
 
         float4 _OutlineColor;
         float _OutlineSize;
@@ -171,12 +171,12 @@
         ENDCG
         
         //Cull Front
-       //Cull Back
+       Cull Back
        //ZWrite On
        
         		// Geom pass
         CGPROGRAM
-        #pragma surface surf SimpleDiffuse alpha
+        #pragma surface surf SimpleDiffuse 
 
         sampler2D _MainTex;
         float _AlphaMultiplier;
@@ -205,6 +205,8 @@
 			o.Alpha = c.a * _AlphaMultiplier;
         }
         ENDCG
+        
+
         
 	}
 	FallBack "Diffuse"

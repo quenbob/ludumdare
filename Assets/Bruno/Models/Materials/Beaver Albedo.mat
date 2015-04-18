@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Beaver Albedo
-  m_Shader: {fileID: 4800000, guid: c86bf0e84f054164bb1fa0f57e24183f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 440245775bb754e4fb621285b19557ff, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -92,16 +92,28 @@ Material:
         second: 0
       data:
         first:
+          name: _Glossiness
+        second: .0399999991
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _OutlineSize
+        second: .00499999989
+      data:
+        first:
+          name: _AlphaMultiplier
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
         first:
           name: _ZWrite
         second: 1
-      data:
-        first:
-          name: _Glossiness
-        second: .0399999991
       data:
         first:
           name: _BumpScale
@@ -126,14 +138,6 @@ Material:
         first:
           name: _Mode
         second: 0
-      data:
-        first:
-          name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _OutlineSize
-        second: .00200000009
     m_Colors:
       data:
         first:
@@ -145,9 +149,9 @@ Material:
         second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
       data:
         first:
-          name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _OutlineColor
         second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}

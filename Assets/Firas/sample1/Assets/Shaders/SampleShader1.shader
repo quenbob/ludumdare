@@ -1,4 +1,4 @@
-﻿Shader "Custom/SampleShader1" {
+﻿Shader "Custom/Cell_basic" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}

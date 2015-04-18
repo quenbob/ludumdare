@@ -402,8 +402,8 @@ MonoBehaviour:
   initialState: 1
   secondsUntilGrownSprout: 1
   secondsBetweenGrowthPhases: .5
-  springStrength: 1
-  springDamping: .5
+  springStrength: 50
+  springDamping: 3
   sproutPhaseTargetScale: 1
   springPhaseInitialScale: .100000001
   springPhaseTargetScale: 1

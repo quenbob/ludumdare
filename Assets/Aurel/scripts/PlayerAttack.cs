@@ -9,12 +9,14 @@ public class PlayerAttack : MonoBehaviour {
 	bool treeInRange;
 	float timer;
 	TreeHealth health;
+	TreeState state;
 	
 	void OnTriggerEnter (Collider other)
 	{
 		if(other.gameObject.tag == "Tree")
 		{
 			health = other.gameObject.GetComponent<TreeHealth>();
+			state = other.gameObject.GetComponent<TreeState>();
 			treeInRange = true;
 		}
 	}
@@ -44,7 +46,7 @@ public class PlayerAttack : MonoBehaviour {
 	{
 		timer = 0.0f;
 		
-		if(health.currentHealth > 0)
+		if(health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
 		{
 			health.TakeDamage(attackDamage, transform.position);
 		}

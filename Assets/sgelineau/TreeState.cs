@@ -12,7 +12,7 @@ public class TreeState : MonoBehaviour {
 	public float secondsUntilGrownSprout = 1;
 	public float secondsBetweenGrowthPhases = 0.5f;
 	public float springStrength = 50;
-	public float springDamping = 10;
+	public float springDamping = 3;
 	public float sproutPhaseTargetScale = 1;
 	public float springPhaseInitialScale = 0.1f;
 	public float springPhaseTargetScale = 1f;

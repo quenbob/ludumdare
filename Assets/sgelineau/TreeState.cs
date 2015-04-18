@@ -109,7 +109,7 @@ public class TreeState : MonoBehaviour {
 				float scaleFactor = newScalePosition;
 				grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
 
-				if (Mathf.Abs(newScalePosition - scalePosition) < 1e-5) {
+				if (Mathf.Abs (acceleration) < 1e-2 && Mathf.Abs(newScalePosition - scalePosition) < 1e-2) {
 					t = 0;
 					++animationPhase;
 

@@ -12,8 +12,10 @@ public class TreesManager : MonoBehaviour {
 	public float zMax = 100.0f;
 	public bool canSpawn = true ;
 	public float clearRadiusAroundNewSpawn = 5.0f;
-
+	public float radiusAroundPlayer = 20.0f;
 	public float groundHeight = 10.0f;
+
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -26,13 +28,18 @@ public class TreesManager : MonoBehaviour {
 			return;
 		}
 
+		float xM = Mathf.Min (xMax, player.transform.position.x + radiusAroundPlayer);
+		float zM = Mathf.Min (zMax, player.transform.position.z + radiusAroundPlayer);
+		float xm = Mathf.Max (xMin, player.transform.position.x - radiusAroundPlayer);
+		float zm = Mathf.Max (zMin, player.transform.position.z - radiusAroundPlayer);
+
 		Vector3 pos = new Vector3();
 		int nbTry = 0;
 		bool ok = false;
 
 		while(!ok && nbTry < 10) {
 			nbTry++;
-			pos = new Vector3(Random.Range (xMin, xMax), groundHeight, Random.Range (zMin, zMax));
+			pos = new Vector3(Random.Range (xm, xM), groundHeight, Random.Range (zm, zM));
 			Collider[] cols = Physics.OverlapSphere(pos, clearRadiusAroundNewSpawn);
 
 			ok = true;

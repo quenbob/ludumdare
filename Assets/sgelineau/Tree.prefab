@@ -80,6 +80,7 @@ GameObject:
   - 114: {fileID: 11435652}
   - 54: {fileID: 5466038}
   - 114: {fileID: 11423858}
+  - 114: {fileID: 11464366}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Tree
@@ -436,6 +437,18 @@ MonoBehaviour:
   sproutPhaseTargetScale: 1
   springPhaseInitialScale: .100000001
   springPhaseTargetScale: 1
+--- !u!114 &11464366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5b554ef77491349b65cc71adc579a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
 --- !u!135 &13587946
 SphereCollider:
   m_ObjectHideFlags: 1

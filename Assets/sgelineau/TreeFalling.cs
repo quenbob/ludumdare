@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
 
-	public float fallingStrength = 200;
+	public float fallingStrength = 500;
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
 

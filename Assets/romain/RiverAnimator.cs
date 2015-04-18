@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class RiverAnimator : MonoBehaviour {
-	float scrollSpeed = 0.35f;
-	float offset = 0f;
+	public float scrollSpeed = 0.20f;
+	public float offset = 0f;
 	
 	void Update () {
 		offset += (Time.deltaTime * scrollSpeed) / 10.0f;

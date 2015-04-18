@@ -9,11 +9,12 @@ public class TreeState : MonoBehaviour {
 
 	public TreeStateEnum initialState = TreeStateEnum.Sprout;
 
+	public bool useGrownModelAsSproutModel = true;
 	public float secondsUntilGrownSprout = 1;
 	public float secondsBetweenGrowthPhases = 0.5f;
 	public float springStrength = 50;
 	public float springDamping = 3;
-	public float sproutPhaseTargetScale = 1;
+	public float sproutPhaseTargetScale = 0.1f;
 	public float springPhaseInitialScale = 0.1f;
 	public float springPhaseTargetScale = 1f;
 
@@ -29,10 +30,16 @@ public class TreeState : MonoBehaviour {
 			}
 
 			privateState = value;
-			
-			sprout.SetActive(privateState == TreeStateEnum.Sprout);
-			grown.SetActive(privateState == TreeStateEnum.Grown);
-			stump.SetActive(privateState == TreeStateEnum.Stump);
+
+			if (useGrownModelAsSproutModel) {
+				sprout.SetActive(false);
+				grown.SetActive(privateState == TreeStateEnum.Sprout || privateState == TreeStateEnum.Grown);
+				stump.SetActive(privateState == TreeStateEnum.Stump);
+			} else {
+				sprout.SetActive(privateState == TreeStateEnum.Sprout);
+				grown.SetActive(privateState == TreeStateEnum.Grown);
+				stump.SetActive(privateState == TreeStateEnum.Stump);
+			}
 		}
 	}
 
@@ -72,7 +79,11 @@ public class TreeState : MonoBehaviour {
 
 				float scaleFactor = fraction * sproutPhaseTargetScale;
 
-				sprout.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+				if (useGrownModelAsSproutModel) {
+					grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+				} else {
+					sprout.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+				}
 
 				if (t >= secondsUntilGrownSprout) {
 					t = 0;

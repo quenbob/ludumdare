@@ -16,7 +16,7 @@ public class TreeFalling : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		if (other.collider.gameObject.tag == "Player") {
+		/*if (other.collider.gameObject.tag == "Player") {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
 
 			// enable physics while the tree is falling
@@ -25,6 +25,6 @@ public class TreeFalling : MonoBehaviour {
 			// fall opposite the player
 			Vector3 playerToTree = (this.transform.position - other.transform.position).normalized;
 			rigidBody.AddForce(fallingStrength * playerToTree);
-		}
+		}*/
 	}
 }

@@ -17,6 +17,7 @@ public class TreeHealth : MonoBehaviour {
 
 	public void TakeDamage(float amount)
 	{
-
+		ParticleSystem ps = transform.Find("WoodChips").gameObject.GetComponent<ParticleSystem>();
+		ps.Play(true);
 	}
 }

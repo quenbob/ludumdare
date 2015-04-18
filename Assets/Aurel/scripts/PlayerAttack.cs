@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider other)
 	{
+		Debug.Log("Enter !!!");
 		if(other.gameObject.tag == "Tree")
 		{
 			health = other.gameObject.GetComponent<TreeHealth>();
@@ -22,6 +23,7 @@ public class PlayerAttack : MonoBehaviour {
 	
 	void OnTriggerExit (Collider other)
 	{
+		Debug.Log("Exit !!!");
 		if(other.gameObject.tag == "Tree")
 		{
 			treeInRange = false;
@@ -43,6 +45,7 @@ public class PlayerAttack : MonoBehaviour {
 	void Attack ()
 	{
 		timer = 0.0f;
+		Debug.Log("Attack !!!");
 		
 		if(health.currentHealth > 0)
 		{

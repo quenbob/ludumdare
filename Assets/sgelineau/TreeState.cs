@@ -64,6 +64,7 @@ public class TreeState : MonoBehaviour {
 
 				float fraction = t / secondsUntilGrownSprout;
 				if (fraction >= 1) fraction = 1;
+				fraction = Mathf.Sqrt(fraction); // slow down towards the end
 
 				float scaleFactor = fraction;
 

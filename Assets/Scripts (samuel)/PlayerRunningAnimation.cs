@@ -8,6 +8,7 @@ public class PlayerRunningAnimation : MonoBehaviour {
 	public float bounceHeight = 0.1f;
 
 	private bool isRunning = false;
+	private bool rightLegFirst = true;
 	private float t = 0;
 
 	public void startRunning() {
@@ -21,6 +22,7 @@ public class PlayerRunningAnimation : MonoBehaviour {
 		if (isRunning) {
 			t = 0;
 			isRunning = false;
+			rightLegFirst = !rightLegFirst;
 		}
 	}
 	
@@ -36,7 +38,7 @@ public class PlayerRunningAnimation : MonoBehaviour {
 		}
 
 		float wiggles = legWigglePerSecond * t;
-		float angle = Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
+		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
 		float height = Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
 
 		GameObject playerModel = GameObject.Find("Model");

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Tree_Alberdo
-  m_Shader: {fileID: 4800000, guid: 440245775bb754e4fb621285b19557ff, type: 3}
+  m_Shader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -92,6 +92,14 @@ Material:
         second: 0
       data:
         first:
+          name: _Glossiness
+        second: .5
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
           name: _OutlineSize
         second: .00499999989
       data:
@@ -102,10 +110,6 @@ Material:
         first:
           name: _ZWrite
         second: 1
-      data:
-        first:
-          name: _Glossiness
-        second: .5
       data:
         first:
           name: _BumpScale
@@ -132,8 +136,8 @@ Material:
         second: 0
       data:
         first:
-          name: _Metallic
-        second: 0
+          name: _AlphaMultiplier
+        second: 1
     m_Colors:
       data:
         first:

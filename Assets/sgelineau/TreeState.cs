@@ -48,9 +48,9 @@ public class TreeState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		sprout = transform.Find("Model/Sprout").gameObject;
-		grown = transform.Find("Model/Grown").gameObject;
-		stump = transform.Find("Model/Stump").gameObject;
+		sprout = transform.Find("Sprout").gameObject;
+		grown = transform.Find("Grown").gameObject;
+		stump = transform.Find("Stump").gameObject;
 
 		currentState = initialState;
 	}

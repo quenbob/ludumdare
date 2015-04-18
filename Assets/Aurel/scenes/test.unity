@@ -467,9 +467,42 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22427474, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405072, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405072, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405072, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1986203034 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192010, guid: c14c3f4292cf7764481340c85c54c33b, type: 2}
+  m_PrefabInternal: {fileID: 1383899380}
+--- !u!114 &1986203035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986203034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7422f9eb87d5147997826a28f966b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreLabel: {fileID: 0}
+  currentScore: 0
 --- !u!1001 &2082563967
 Prefab:
   m_ObjectHideFlags: 0

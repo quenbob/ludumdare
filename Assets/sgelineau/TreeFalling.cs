@@ -26,18 +26,19 @@ public class TreeFalling : MonoBehaviour {
 				if (t >= secondsBeforeDisappearing) {
 					t = 0;
 					++animationPhase;
-
-					//Destroy (gameObject, secondsBlendingOut);
 				}
 				break;
 			case 1:
 				float alpha = 1 - t / secondsBlendingOut;
-				if (alpha < 0)
+				if (alpha < 0) {
 					alpha = 0;
-				Debug.Log (alpha);
+					Destroy (gameObject);
+				} else {
+					Debug.Log (alpha);
 
-				transform.Find ("Model/Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
-				transform.Find ("Model/Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find ("Model/Grown/Sphere").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find ("Model/Grown/Cylinder").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+				}
 				break;
 			}
 		}

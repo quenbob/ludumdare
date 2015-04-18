@@ -104,10 +104,19 @@ public class TreeState : MonoBehaviour {
 
 				float acceleration = springStrength * (springPhaseTargetScale - scalePosition) - springDamping * scaleVelocity;
 				scaleVelocity = scaleVelocity + acceleration * Time.deltaTime;
-				scalePosition = scalePosition + scaleVelocity * Time.deltaTime;
+				float newScalePosition = scalePosition + scaleVelocity * Time.deltaTime;
 				
-				float scaleFactor = scalePosition;
+				float scaleFactor = newScalePosition;
 				grown.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+
+				if (Mathf.Abs(newScalePosition - scalePosition) < 1e-5) {
+					t = 0;
+					++animationPhase;
+
+					isSprouting = false;
+				} else {
+					scalePosition = newScalePosition;
+				}
 				break;
 			}
 			}

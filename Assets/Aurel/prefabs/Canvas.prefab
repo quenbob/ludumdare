@@ -47,8 +47,9 @@ GameObject:
   - 222: {fileID: 22260086}
   - 114: {fileID: 11405072}
   - 114: {fileID: 11494018}
+  - 114: {fileID: 11463612}
   m_Layer: 5
-  m_Name: ScroreLabel
+  m_Name: ScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +102,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score: 0'
+--- !u!114 &11463612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7422f9eb87d5147997826a28f966b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreLabel: {fileID: 0}
+  currentScore: 0
 --- !u!114 &11474420
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -46,7 +46,7 @@ public class PlayerAttack : MonoBehaviour {
 		
 		if(health.currentHealth > 0)
 		{
-			health.TakeDamage(attackDamage);
+			health.TakeDamage(attackDamage, transform.position);
 		}
 	}
 }

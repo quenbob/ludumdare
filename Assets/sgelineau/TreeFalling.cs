@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
@@ -17,7 +17,8 @@ public class TreeFalling : MonoBehaviour {
 		if (other.collider.gameObject.tag == "Player") {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
 			rigidBody.isKinematic = false;
-			rigidBody.AddForce(new Vector3(1,0,0));
+			rigidBody.AddForce(new Vector3(100,0,0));
+			//rigidBody.AddTorque(new Vector3(1,0,0));
 
 			GetComponent<Collider>().isTrigger = true;
 		}

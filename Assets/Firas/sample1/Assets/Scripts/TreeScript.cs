@@ -31,7 +31,6 @@ public class TreeScript : MonoBehaviour {
 		{
 			if(!fireStarted)
 			{
-				Debug.Log ("tree is on fire");
 				OnFireParticleSystem.Play ();
 				fireStarted = true;
 			}

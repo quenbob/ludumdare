@@ -9,6 +9,7 @@ public class TreeScript : MonoBehaviour {
 	public float TimeToBurnOthers = 7.0f;
 	public int MaxTreesToBurn = 2;
 	public float FireRadius = 15.0f;
+	public float BurnLifetime = 20.0f;
 
 	private float FireStartedTime = -1.0f;
 	private int numberOfFiresStarted = 0;
@@ -37,6 +38,11 @@ public class TreeScript : MonoBehaviour {
 			{
 				FireStartedTime = Time.time;
 
+			}
+			else if(Time.time - FireStartedTime>BurnLifetime){
+				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(0.0f,0.0f,0.0f),false);
+				Vector3 direction = Vector3.Normalize(transform.position);
+				//GetComponent<TreeFalling>().cutDownFrom(new Vector3(0.0f,0.0f,0.0f),false);
 			}
 
 			{

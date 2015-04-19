@@ -41,7 +41,7 @@ public class TreeFalling : MonoBehaviour {
 		}
 	}
 
-	public void cutDownFrom(Vector3 forceSource) {
+	public void cutDownFrom(Vector3 forceSource, bool score = true) {
 		if (!isDying) {
 			Rigidbody rigidBody = GetComponent<Rigidbody> ();
 
@@ -57,16 +57,19 @@ public class TreeFalling : MonoBehaviour {
 			t = 0;
 			animationPhase = 0;
 
-			// increment score
-			GameObject scoreLabel = GameObject.Find("Managers");
-			if (scoreLabel) {
-				scoreLabel.GetComponent<ScoreManager>().AddScore(1);
-			}
+			if(score)
+			{
+				// increment score
+				GameObject scoreLabel = GameObject.Find("Managers");
+				if (scoreLabel) {
+					scoreLabel.GetComponent<ScoreManager>().AddScore(1);
+				}
 
-			// give the player more time
-			GameObject timerLabel = GameObject.Find("Managers");
-			if (timerLabel) {
-				timerLabel.GetComponent<TimerManager>().AddTime(5);
+				// give the player more time
+				GameObject timerLabel = GameObject.Find("Managers");
+				if (timerLabel) {
+					timerLabel.GetComponent<TimerManager>().AddTime(5);
+				}
 			}
 		}
 	}

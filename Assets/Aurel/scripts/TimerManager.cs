@@ -8,6 +8,12 @@ public class TimerManager : MonoBehaviour {
 	public Text timeLabel;
 	public GameObject gameOverScreen;
 
+	private bool mIsPaused = false;
+	public bool isPaused {
+		get { return mIsPaused; }
+		set { mIsPaused = value; }
+	}
+
 	private bool mIsGameOver = false;
 	public bool isGameOver
 	{
@@ -41,6 +47,7 @@ public class TimerManager : MonoBehaviour {
 	private PlayerAttack playerAttack;
 	private PlayerMovement playerMovement;
 	private float offsetSinceStartup = 0.0f;
+	private float timeRemaining = 0.0f;
 
 	// Use this for initialization
 	void Start() 
@@ -62,10 +69,11 @@ public class TimerManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update() 
 	{
-		if(isGameOver)
+		if(isPaused || isGameOver)
 			return;
 
-		float timeRemaining = startTime - Time.realtimeSinceStartup + offsetSinceStartup;
+		timeRemaining = startTime - Time.realtimeSinceStartup + offsetSinceStartup;
+
 		int min = (int)(timeRemaining / 60);
 		int sec = (int)(timeRemaining - min*60);
 		string dixs = (sec < 10) ? "0" : "";
@@ -85,5 +93,16 @@ public class TimerManager : MonoBehaviour {
 	public void AddTime(int amount) 
 	{
 		startTime += amount;
+	}
+
+	public void Pause()
+	{
+		isPaused = true;
+	}
+
+	public void Resume()
+	{
+		isPaused = false;
+		offsetSinceStartup = timeRemaining + Time.realtimeSinceStartup - startTime;
 	}
 }

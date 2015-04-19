@@ -8,5 +8,9 @@ public class MenuController : MonoBehaviour {
 	public void OnResumeGame() {
 		Debug.Log("Resume game");
 		menuOverlay.SetActive(false);
+
+		GameObject managers = GameObject.Find("Managers");
+		TimerManager timerManager = managers.GetComponent<TimerManager>();
+		timerManager.Resume();
 	}
 }

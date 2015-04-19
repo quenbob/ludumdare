@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a36940a50bee0a4d8b8e71dc3c17e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transparentShader: {fileID: 4800000, guid: c86bf0e84f054164bb1fa0f57e24183f, type: 3}
+  transparentShader: {fileID: 4800000, guid: 7f274fb461127ac42b2ad4859281cee8, type: 3}
   opaqueShader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
 --- !u!135 &13510740
 SphereCollider:

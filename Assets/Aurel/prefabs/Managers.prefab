@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c7a48bf78fdec449a10d0d76b3c4e97, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .25
+  m_Volume: .5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 20
   timeLabel: {fileID: 0}
-  isGameOver: 0
+  gameOverScreen: {fileID: 0}
 --- !u!114 &11469566
 MonoBehaviour:
   m_ObjectHideFlags: 1

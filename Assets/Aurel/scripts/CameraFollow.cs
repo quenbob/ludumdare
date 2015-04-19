@@ -23,6 +23,7 @@ public class CameraFollow : MonoBehaviour {
 		{
 			if (mCameraArrive != value)
 			{
+				Debug.Log ("coucou");
 				mCameraArrive = value;
 				if (value)
 					DropLogs();
@@ -53,8 +54,12 @@ public class CameraFollow : MonoBehaviour {
 			Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, LogPosition, smoothing * Time.deltaTime);
 			Camera.main.fieldOfView = maxFov;
 
-			if (Camera.main.transform.position == LogPosition)
+			float dist = Vector3.Distance(Camera.main.transform.position, LogPosition);
+
+			if (dist < 2.0f)
+			{
 				cameraArrive = true;
+			}
 		}
 	}
 	
@@ -88,12 +93,15 @@ public class CameraFollow : MonoBehaviour {
 	{
 		if (script && scoreManager)
 		{
-			script.spawnLog();
-
-			scoreManager.currentScore--;
-
-			if (scoreManager.currentScore <= 0)
+			if (scoreManager.currentScore > 0)
+			{
+				script.spawnLog();
+				scoreManager.currentScore--;
+			}
+			else
+			{
 				CancelInvoke("SpawnLog");
+			}
 		}
 	}
 }

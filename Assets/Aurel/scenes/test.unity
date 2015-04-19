@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c4ae21662a4287948a69a88a1b7cadd0, type: 2}
 --- !u!4 &24281931 stripped
 Transform:
   m_PrefabParentObject: {fileID: 442162, guid: 594698f07a8290d468da68db57c048d5, type: 2}
@@ -107,7 +107,7 @@ GameObject:
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &411340524
 MeshRenderer:

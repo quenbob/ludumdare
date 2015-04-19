@@ -14,8 +14,6 @@ public class woodSound : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
-		Debug.Log ("prout");
-
 		if(alreadyDone || trigger)
 			return;
 

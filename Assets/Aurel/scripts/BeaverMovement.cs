@@ -9,8 +9,8 @@ public class BeaverMovement : MonoBehaviour {
 	private bool direction = false;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
 	}
 	
 	// Update is called once per frame

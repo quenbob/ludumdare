@@ -1,0 +1,48 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660M   (ID=0xfd4)
+    Vendor:   NVIDIA
+    VRAM:     1987 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.135 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.149539 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 193.
+Total: 0.157370 ms (FindLiveObjects: 0.016250 ms CreateObjectMapping: 0.008980 ms MarkObjects: 0.127435 ms  DeleteObjects: 0.004276 ms)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.549325 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 365.
+Total: 0.379313 ms (FindLiveObjects: 0.027368 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.168488 ms  DeleteObjects: 0.167205 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: f68 -> priority: 1 
+  Thread -> id: 365c -> priority: 1 

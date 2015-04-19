@@ -24,9 +24,10 @@ public class EnemyAttack : MonoBehaviour
 	
 	void OnTriggerExit (Collider other)
 	{
-		if(other.gameObject == player)
-		{
+		if (other.gameObject == player) {
 			playerInRange = false;
+		} else if (other.tag == "Tree") {
+			other.GetComponent<TreeScript>().SetThisOnFire();
 		}
 	}
 	

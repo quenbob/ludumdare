@@ -17,7 +17,7 @@ public class TreeScript : MonoBehaviour {
 		OnFireParticleSystem.Stop ();
 	}
 
-	void SetThisOnFire()
+	public void SetThisOnFire()
 	{
 		TreeOnFire = true;
 	}
@@ -29,6 +29,7 @@ public class TreeScript : MonoBehaviour {
 		{
 			if(!OnFireParticleSystem.IsAlive())
 			{
+				Debug.Log ("tree is on fire");
 				OnFireParticleSystem.Play ();
 			}
 

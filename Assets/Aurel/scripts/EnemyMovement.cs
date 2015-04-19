@@ -17,12 +17,19 @@ public class EnemyMovement : MonoBehaviour {
 	private NavMeshAgent nav;
 	private float timeSinceLastChange = 0.0f;
 	private TimerManager timeManager;
+	private ParticleSystem fireParticleSystem;
+	private EnemyRunningAnimation enemyRunningAnimation;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		timeManager = GameObject.Find("Managers").GetComponent<TimerManager>();
 		nav = GetComponent <NavMeshAgent>();
+
+		fireParticleSystem = transform.Find ("Fire Continuous").GetComponent<ParticleSystem> ();
+		fireParticleSystem.Pause ();
+
+		enemyRunningAnimation = GetComponent<EnemyRunningAnimation> ();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +54,8 @@ public class EnemyMovement : MonoBehaviour {
 				if (col.tag == "Player")
 				{
 					currentState = StateEnum.follow;
+					fireParticleSystem.Play();
+					enemyRunningAnimation.startRunning();
 					return;
 				}
 			}
@@ -92,6 +101,8 @@ public class EnemyMovement : MonoBehaviour {
 			else
 			{
 				currentState = StateEnum.idle;
+				fireParticleSystem.Stop();
+				enemyRunningAnimation.stopRunning();
 				Stop();
 			}
 		}
@@ -99,6 +110,10 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void ChangeDirection()
 	{
+		currentState = StateEnum.walk;
+		fireParticleSystem.Stop();
+		enemyRunningAnimation.startRunning();
+
 		if (!nav.isActiveAndEnabled)
 			nav.enabled = true;
 		movement = new Vector3(Random.Range(70, 400), transform.position.y, Random.Range (30, 330));

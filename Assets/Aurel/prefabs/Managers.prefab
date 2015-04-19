@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  logPile: {fileID: 0}
   smoothing: 5
   minFov: 15
   maxFov: 60
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a81a215c5c38341bf146d0122717db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 120
+  startTime: 5
   timeLabel: {fileID: 0}
 --- !u!114 &11469566
 MonoBehaviour:

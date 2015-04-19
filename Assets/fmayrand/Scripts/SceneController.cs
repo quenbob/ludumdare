@@ -3,11 +3,12 @@ using System.Collections;
 
 public class SceneController : MonoBehaviour {
 
-	[SerializeField] private LevelManager levelManager;
+	[SerializeField] private GameObject menuOverlay;
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			levelManager.LoadLevel("Start Menu");
+			Debug.Log("Show menu");
+			menuOverlay.SetActive(true);
 		}
 	}
 }

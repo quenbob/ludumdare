@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 0f07c4f77ba22ef4199dd09abfddec49, type: 2}
 --- !u!114 &301811840 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11471230, guid: c14c3f4292cf7764481340c85c54c33b,

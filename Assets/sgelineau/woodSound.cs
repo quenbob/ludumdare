@@ -5,6 +5,7 @@ public class woodSound : MonoBehaviour
 {
 	private bool alreadyDone = false;
 	private AudioSource fallAudio;
+	public bool trigger = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,9 @@ public class woodSound : MonoBehaviour
 
 	void OnCollisionEnter(Collision other)
 	{
-		if(alreadyDone)
+		Debug.Log ("prout");
+
+		if(alreadyDone || trigger)
 			return;
 
 		if(fallAudio)
@@ -24,7 +27,9 @@ public class woodSound : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(alreadyDone)
+		Debug.Log ("hello");
+
+		if(alreadyDone || !trigger)
 			return;
 		
 		if(fallAudio)

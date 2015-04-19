@@ -7,9 +7,12 @@ public class TimerManager : MonoBehaviour {
 	public float startTime;
 	public Text timeLabel;
 
+	private CameraFollow cameraScript;
+
 	// Use this for initialization
 	void Start() 
 	{
+		cameraScript = GetComponent<CameraFollow>();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +31,9 @@ public class TimerManager : MonoBehaviour {
 
 		if(Time.realtimeSinceStartup > startTime)
 		{
-			Application.LoadLevel("Lose Screen");
+			//Application.LoadLevel("Lose Screen");
+			if (cameraScript)
+				cameraScript.ShowLogs();
 		}
 	}
 

@@ -175,6 +175,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11436362, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: scrollSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 441462, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 435178, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 474382, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 473238, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 467142, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 495222, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4aae317f00fb344aac29926c0bfb7bd, type: 2}
   m_IsPrefabParent: 0

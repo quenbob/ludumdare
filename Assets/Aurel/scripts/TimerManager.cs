@@ -6,7 +6,7 @@ public class TimerManager : MonoBehaviour {
 
 	public float startTime;
 	public Text timeLabel;
-	public GameObject gameOverScreen;
+	public SceneController sceneController;
 
 	private bool mIsPaused = false;
 	public bool isPaused {
@@ -26,8 +26,8 @@ public class TimerManager : MonoBehaviour {
 
 				if (value)
 				{
-					if (gameOverScreen)
-						gameOverScreen.SetActive(true);
+					if (sceneController)
+						sceneController.EndGame();
 					
 					if (cameraScript)
 						cameraScript.ShowLogs();

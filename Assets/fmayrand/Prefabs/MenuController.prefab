@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0c33d1f2f402b4d8a3d99bbd670140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuOverlay: {fileID: 0}
+  sceneController: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Tree
+  - Enemy
+  - TreeModel
   layers:
   - Default
   - TransparentFX

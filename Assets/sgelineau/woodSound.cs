@@ -27,9 +27,9 @@ public class woodSound : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log ("hello");
+		Debug.Log (other);
 
-		if(alreadyDone || !trigger || other.gameObject.tag != "Floor")
+		if(alreadyDone || !trigger || other.gameObject.tag == "Tree" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player" | other.gameObject.tag == "TreeModel")
 			return;
 		
 		if(fallAudio)

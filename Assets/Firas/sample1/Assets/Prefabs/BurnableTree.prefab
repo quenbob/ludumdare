@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11460166}
   - 136: {fileID: 13676694}
   - 114: {fileID: 11442430}
+  - 114: {fileID: 11456016}
   m_Layer: 0
   m_Name: Model
   m_TagString: Tree
@@ -702,6 +703,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transparentShader: {fileID: 4800000, guid: 7f274fb461127ac42b2ad4859281cee8, type: 3}
   opaqueShader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
+--- !u!114 &11456016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb368b8f96555364e9e451df5d85d37e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TreeOnFire: 0
+  OnFireParticleSystem: {fileID: 19867598}
+  TimeToBurnOthers: 5
+  MaxTreesToBurn: 2
+  FireRadius: 15
 --- !u!114 &11460166
 MonoBehaviour:
   m_ObjectHideFlags: 1

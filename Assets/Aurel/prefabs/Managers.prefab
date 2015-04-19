@@ -141,8 +141,9 @@ MonoBehaviour:
   zMin: 336
   zMax: 466
   canSpawn: 1
-  clearRadiusAroundNewSpawn: 5
-  radiusAroundPlayer: 20
+  clearRadiusAroundNewSpawn: 20
+  clearTag: Player
+  radiusAroundPlayer: 40
   groundHeight: 10
   initalTreeCount: 0
   player: {fileID: 0}
@@ -176,8 +177,9 @@ MonoBehaviour:
   zMin: 25
   zMax: 336
   canSpawn: 1
-  clearRadiusAroundNewSpawn: 5
-  radiusAroundPlayer: 20
+  clearRadiusAroundNewSpawn: 20
+  clearTag: Player
+  radiusAroundPlayer: 40
   groundHeight: 10
   initalTreeCount: 0
   player: {fileID: 0}
@@ -215,7 +217,8 @@ MonoBehaviour:
   zMax: 336
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
-  radiusAroundPlayer: 50
+  clearTag: Tree
+  radiusAroundPlayer: 20
   groundHeight: 10
   initalTreeCount: 200
   player: {fileID: 0}
@@ -239,6 +242,7 @@ MonoBehaviour:
   zMax: 466
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
+  clearTag: Tree
   radiusAroundPlayer: 20
   groundHeight: 10
   initalTreeCount: 50

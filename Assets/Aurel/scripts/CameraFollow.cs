@@ -9,17 +9,21 @@ public class CameraFollow : MonoBehaviour {
 	public float maxFov = 90f;
 	public float sensitivity = 10f;
 
-	private Vector3 offset;
+	private Vector3 offset = new Vector3();
 	
 	void Start ()
 	{
-		offset = Camera.main.transform.position - target.position;
+		if (target)
+			offset = Camera.main.transform.position - target.position;
 	}
 	
 	void FixedUpdate ()
 	{
-		Vector3 targetCamPos = target.position + offset;
-		Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, targetCamPos, smoothing * Time.deltaTime);
+		if (target)
+		{
+			Vector3 targetCamPos = target.position + offset;
+			Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, targetCamPos, smoothing * Time.deltaTime);
+		}
 	}
 	
 	void Update () {

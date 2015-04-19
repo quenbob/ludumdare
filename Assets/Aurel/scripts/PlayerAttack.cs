@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAttack : MonoBehaviour {
-
+public class PlayerAttack : MonoBehaviour 
+{
 	public float timeBetweenAttacks = 0.5f;
 	public int attackDamage = 10;	
-	float timer;
-	TreeHealth health;
-	TreeState state;
-	AudioSource chompAudio;
-	PlayerMovement playerMovement;
+
+	private bool m_treeInRange = false;
 	public bool treeInRange
 	{
 		get { return m_treeInRange; }
@@ -18,22 +15,25 @@ public class PlayerAttack : MonoBehaviour {
 			if (value != m_treeInRange)
 			{
 				m_treeInRange = value;
-				playerMovement.TreeInRange(treeInRange) ;
+				if(playerMovement)
+					playerMovement.TreeInRange(treeInRange);
 			}
 		}
 	}
 
-	private bool m_treeInRange = false;
+	private float timer;
+	private TreeHealth health;
+	private TreeState state;
+	private AudioSource chompAudio;
+	private PlayerMovement playerMovement;
 
-
-
-	void Awake ()
+	void Awake()
 	{
-		chompAudio = GetComponent <AudioSource> ();
+		chompAudio = GetComponent<AudioSource>();
 		playerMovement = GetComponent<PlayerMovement>();
 	}
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Tree")
 		{
@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	
-	void OnTriggerExit (Collider other)
+	void OnTriggerExit(Collider other)
 	{
 		if(other.gameObject.tag == "Tree")
 		{
@@ -53,22 +53,22 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	
-	void Update ()
+	void Update()
 	{
 		timer += Time.deltaTime;
 		
 		if(timer >= timeBetweenAttacks && treeInRange)
 		{
-			Attack ();
+			Attack();
 		}
 	}
 	
 	
-	void Attack ()
+	void Attack()
 	{
 		timer = 0.0f;
 		
-		if(health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
+		if(health && state && health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
 		{
 			chompAudio.Play ();
 			health.TakeDamage(attackDamage, transform.position);

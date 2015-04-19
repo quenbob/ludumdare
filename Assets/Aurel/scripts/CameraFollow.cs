@@ -71,7 +71,6 @@ public class CameraFollow : MonoBehaviour {
 			f = f * f * f;
 			Camera.main.fieldOfView = (targetFov - minFov) * f + minFov;
 			if (t >= secondsToFullyZoomedOut) {
-				Debug.Log ("done zooming");
 				isAnimatingOut = false;
 			}
 		} else {

@@ -26,7 +26,6 @@ public class EnemyAttack : MonoBehaviour
 	{
 		if(other.gameObject == player)
 		{
-			Debug.Log ("stop fire");
 			playerInRange = false;
 		}
 	}

@@ -300,18 +300,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1272422478}
     - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 24281931}
     - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: initalTreeCount
-      value: 50
-      objectReference: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1272422478}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_IsPrefabParent: 0

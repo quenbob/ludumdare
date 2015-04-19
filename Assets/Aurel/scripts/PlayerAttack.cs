@@ -71,8 +71,6 @@ public class PlayerAttack : MonoBehaviour {
 		if(health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
 		{
 			chompAudio.Play ();
-			ParticleSystem ps = transform.Find("Beaver_Manipulator/WoodChips").gameObject.GetComponent<ParticleSystem>();
-			ps.Play(true);
 			health.TakeDamage(attackDamage, transform.position);
 		}
 		else

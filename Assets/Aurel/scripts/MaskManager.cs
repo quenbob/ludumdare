@@ -5,14 +5,6 @@ using System.Collections.Generic;
 public class MaskManager : MonoBehaviour {
 
 	List<GameObject> listeMasked = new List<GameObject>();
-	Ray maskRay;
-	RaycastHit maskHit;
-	int maskableMask;
-
-	void Awake ()
-	{
-		maskableMask = LayerMask.GetMask ("Maskable");
-	}
 
 	// Use this for initialization
 	void Start () {

@@ -24,7 +24,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 460942}
   - 33: {fileID: 3358028}
-  - 135: {fileID: 13515676}
   - 23: {fileID: 2377062}
   m_Layer: 0
   m_Name: Sphere
@@ -74,7 +73,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 485132}
   - 33: {fileID: 3308554}
-  - 135: {fileID: 13582198}
   - 23: {fileID: 2395360}
   m_Layer: 0
   m_Name: Sphere
@@ -113,7 +111,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 459982}
   - 33: {fileID: 3338580}
-  - 135: {fileID: 13532196}
   - 23: {fileID: 2331392}
   m_Layer: 0
   m_Name: Sphere
@@ -415,30 +412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
---- !u!135 &13515676
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13532196
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190044}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &13563564
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -451,18 +424,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!135 &13582198
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188768}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19540332
 NavMeshAgent:
   m_ObjectHideFlags: 1

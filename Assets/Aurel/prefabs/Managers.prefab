@@ -11,6 +11,8 @@ GameObject:
   - 114: {fileID: 11469566}
   - 114: {fileID: 11433414}
   - 114: {fileID: 11437042}
+  - 114: {fileID: 11487734}
+  - 114: {fileID: 11460026}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -57,6 +59,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8e2b0b079b7354eab46c5ef3d32739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11460026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a81a215c5c38341bf146d0122717db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 120
+  timeLabel: {fileID: 0}
 --- !u!114 &11469566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +96,19 @@ MonoBehaviour:
   groundHeight: 0
   initalTreeCount: 50
   player: {fileID: 0}
+--- !u!114 &11487734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7422f9eb87d5147997826a28f966b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreLabel: {fileID: 0}
+  currentScore: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

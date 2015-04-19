@@ -44,7 +44,14 @@ public class SceneController : MonoBehaviour {
 		Debug.Log("End game");
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(false);
-		loseScore.text = scoreManager.currentScore.ToString() + " trees cut";
+
+		if (scoreManager.currentScore == 1) {
+			loseScore.text = "1 tree cut";
+		}
+		else {
+			loseScore.text = scoreManager.currentScore.ToString() + " trees cut";
+		}
+
 		loseOverlay.SetActive(true);
 	}
 }

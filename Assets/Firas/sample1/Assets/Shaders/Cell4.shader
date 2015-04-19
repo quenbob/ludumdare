@@ -39,7 +39,6 @@
         float4 _OutlineColor;
         float _OutlineSize;
         float _AlphaMultiplier;
-        sampler2D _BackgroundTex;
 
 
         void vert (inout appdata_full v) 
@@ -61,9 +60,7 @@
         void surf (Input IN, inout SurfaceOutput o) 
         {
         
-            half4 c = tex2D (_BackgroundTex, IN.uv_MainTex);
-	o.Albedo = c.rgb;
-           // o.Albedo = _OutlineColor;
+           o.Albedo = _OutlineColor;
             o.Alpha = _OutlineColor.a * _AlphaMultiplier;
             
             
@@ -193,6 +190,7 @@
         
 
 
+
         //Cull Front
 Cull Back
 ZWrite On
@@ -233,15 +231,24 @@ void surf (Input IN, inout SurfaceOutput o)
 	
 }
 ENDCG
+
 //Cull Back
 ZWrite On
-Blend SrcAlpha OneMinusDstAlpha 
+Blend SrcAlpha OneMinusSrcAlpha 
 
 Pass
 {
+
+
+
  Lighting Off
- SetTexture [_MainTex] { combine texture } 
+ SetTexture [_MainTex] {
+  
+ constantColor (1,1,1,[_AlphaMultiplier])
+ combine constant * texture 
+ } 
 }
+
 
 
         

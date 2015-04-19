@@ -94,7 +94,7 @@ public class TreesManager : MonoBehaviour {
 		if (ok)
 		{
 			Quaternion rot = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
-			GameObject tree = GameObject.Instantiate(treeObject, pos, rot) as GameObject;
+			GameObject.Instantiate(treeObject, pos, rot);
 
 			/*if(tree && fullGrown)
 			{

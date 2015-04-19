@@ -5,7 +5,6 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform target;
 	public Transform logPile;
-	private float initialZoomOutSmoothing = 5.0f;
 	private float secondsToFullyZoomedOut = 5.0f;
 	public float smoothing = 5.0f;
 	public float minFov = 5f;

@@ -30,6 +30,7 @@ GameObject:
   - 136: {fileID: 13676694}
   - 114: {fileID: 11442430}
   - 114: {fileID: 11456016}
+  - 82: {fileID: 8217344}
   m_Layer: 0
   m_Name: Model
   m_TagString: Tree
@@ -199,8 +200,6 @@ GameObject:
   - 23: {fileID: 2365868}
   - 95: {fileID: 9577248}
   - 136: {fileID: 13658008}
-  - 114: {fileID: 11438402}
-  - 82: {fileID: 8292460}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Tree
@@ -542,18 +541,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.00000012, y: 2, z: 1.00000024}
   m_Center: {x: 0, y: .5, z: 0}
---- !u!82 &8292460
+--- !u!82 &8217344
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183332}
+  m_GameObject: {fileID: 119604}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c44c6618bf90326479407b20d6be3bfb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .435000002
+  m_Volume: .476999998
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -642,6 +641,7 @@ MonoBehaviour:
   fallingStrength: 500
   secondsBeforeDisappearing: 1
   secondsBlendingOut: 1
+  timeBeforeSound: 1.29999995
 --- !u!114 &11409684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -678,18 +678,7 @@ MonoBehaviour:
   TimeToBurnOthers: 20
   MaxTreesToBurn: 2
   FireRadius: 15
---- !u!114 &11438402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f59f749a12496c0438e3aaf35f04b089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 1
+  BurnLifetime: 20
 --- !u!114 &11442430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,6 +708,7 @@ MonoBehaviour:
   TimeToBurnOthers: 5
   MaxTreesToBurn: 2
   FireRadius: 15
+  BurnLifetime: 20
 --- !u!114 &11460166
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -312,14 +312,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 24281931}
     - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1272422478}
+    - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 24281931}
+    - target: {fileID: 11487734, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: scoreLabel
+      value: 
+      objectReference: {fileID: 580269725}
+    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: timeLabel
+      value: 
+      objectReference: {fileID: 1186449312}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_IsPrefabParent: 0
@@ -482,36 +490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &1801879701 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 153788, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-  m_PrefabInternal: {fileID: 1195708691}
---- !u!114 &1801879702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1801879701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7422f9eb87d5147997826a28f966b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreLabel: {fileID: 580269725}
-  currentScore: 0
---- !u!114 &1801879703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1801879701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a81a215c5c38341bf146d0122717db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 120
-  timeLabel: {fileID: 1186449312}
 --- !u!1001 &2082563967
 Prefab:
   m_ObjectHideFlags: 0

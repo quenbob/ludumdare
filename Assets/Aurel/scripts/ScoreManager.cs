@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
 	// Use this for initialization
 	void Start() 
 	{
-		scoreLabel = GetComponent <Text>();
 	}
 
 	// Update is called once per frame

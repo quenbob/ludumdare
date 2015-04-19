@@ -10,7 +10,6 @@ public class TimerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start() 
 	{
-		timeLabel = GetComponent<Text>();
 	}
 	
 	// Update is called once per frame

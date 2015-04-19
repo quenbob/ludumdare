@@ -14,9 +14,7 @@ Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2
 Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.105 seconds
+- Completed reload, in  0.075 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -28,21 +26,123 @@ The referenced script on this Behaviour is missing!
 (Filename:  Line: 1713)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.031084 ms
+UnloadTime: 3.290659 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 195.
-Total: 0.177896 ms (FindLiveObjects: 0.018815 ms CreateObjectMapping: 0.009407 ms MarkObjects: 0.144540 ms  DeleteObjects: 0.004703 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 202.
+Total: 0.179179 ms (FindLiveObjects: 0.033355 ms CreateObjectMapping: 0.027796 ms MarkObjects: 0.113323 ms  DeleteObjects: 0.004276 ms)
 
 New level load: Level1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.539062 ms
+UnloadTime: 1.396659 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 392.
-Total: 0.394708 ms (FindLiveObjects: 0.023092 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.193291 ms  DeleteObjects: 0.162074 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 630.
+Total: 0.577736 ms (FindLiveObjects: 0.062434 ms CreateObjectMapping: 0.052171 ms MarkObjects: 0.287371 ms  DeleteObjects: 0.174903 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3230 -> priority: 1 
-  Thread -> id: 30ec -> priority: 1 
+  Thread -> id: 25fc -> priority: 1 
+  Thread -> id: 32b0 -> priority: 1 
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.865937 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 0.462702 ms (FindLiveObjects: 0.035493 ms CreateObjectMapping: 0.023519 ms MarkObjects: 0.236482 ms  DeleteObjects: 0.166778 ms)
+
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.754565 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 0.467833 ms (FindLiveObjects: 0.036349 ms CreateObjectMapping: 0.025658 ms MarkObjects: 0.240331 ms  DeleteObjects: 0.164639 ms)
+
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.958307 ms
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 0.469116 ms (FindLiveObjects: 0.036776 ms CreateObjectMapping: 0.025658 ms MarkObjects: 0.241186 ms  DeleteObjects: 0.164639 ms)
+
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.602086 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 0.527702 ms (FindLiveObjects: 0.062007 ms CreateObjectMapping: 0.055592 ms MarkObjects: 0.242469 ms  DeleteObjects: 0.166350 ms)
+
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+New level load: Level1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.108166 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 0.491353 ms (FindLiveObjects: 0.056447 ms CreateObjectMapping: 0.053026 ms MarkObjects: 0.226219 ms  DeleteObjects: 0.154804 ms)
+
+done zooming
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+End game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Pause game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+

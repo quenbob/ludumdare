@@ -110,7 +110,7 @@ ModelImporter:
     4300036: Box011
     4300038: Box012
     7400000: WalkCycle
-    7400002: Take 001
+    7400002: StillToWalk
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -199,7 +199,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Take 001
+      name: StillToWalk
       takeName: Take 001
       firstFrame: 0
       lastFrame: 10

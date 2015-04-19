@@ -181,14 +181,14 @@ MonoBehaviour:
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: .100000001
   timeBetweenTwoSpawn: 5
-  xMin: -100
-  xMax: 100
-  zMin: -100
-  zMax: 100
+  xMin: 67
+  xMax: 409
+  zMin: 25
+  zMax: 336
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 50
-  groundHeight: 0
+  groundHeight: 10
   initalTreeCount: 200
   player: {fileID: 0}
 --- !u!114 &11487652
@@ -205,15 +205,15 @@ MonoBehaviour:
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: 3
   timeBetweenTwoSpawn: 5
-  xMin: -100
-  xMax: 100
-  zMin: -100
-  zMax: 100
+  xMin: 139
+  xMax: 406
+  zMin: 336
+  zMax: 466
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 20
-  groundHeight: 0
-  initalTreeCount: 0
+  groundHeight: 10
+  initalTreeCount: 50
   player: {fileID: 0}
 --- !u!114 &11487734
 MonoBehaviour:

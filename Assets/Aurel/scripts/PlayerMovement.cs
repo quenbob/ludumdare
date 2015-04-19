@@ -14,17 +14,19 @@ public class PlayerMovement : MonoBehaviour
 	private float recordedV = 0.0f;
 	private bool recorded = false;
 	private Animator anim;
+	private TimerManager timeManager;
 
 	// Use this for initialization
 	void Start () 
 	{
 		playerRigidbody = GetComponent<Rigidbody>();
+		timeManager = GameObject.Find("Managers").GetComponent<TimerManager>();
 		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate()
 	{
-		if (!canMove)
+		if (!canMove || timeManager.isPaused)
 			return;
 
 		float h = Input.GetAxisRaw("Horizontal");

@@ -16,15 +16,27 @@ public class EnemyMovement : MonoBehaviour {
 	private Transform player;
 	private NavMeshAgent nav;
 	private float timeSinceLastChange = 0.0f;
+	private TimerManager timeManager;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		timeManager = GameObject.Find("Managers").GetComponent<TimerManager>();
 		nav = GetComponent <NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (timeManager.isPaused && nav.isActiveAndEnabled)
+		{
+			nav.enabled = false;
+			return;
+		}
+		else if (!nav.isActiveAndEnabled && currentState != StateEnum.idle)
+		{
+			nav.enabled = true;
+		}
+
 		if (currentState != StateEnum.follow)
 		{
 			// Verify if player is in range

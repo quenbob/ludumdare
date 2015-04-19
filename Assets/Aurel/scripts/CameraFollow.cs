@@ -23,7 +23,6 @@ public class CameraFollow : MonoBehaviour {
 		{
 			if (mCameraArrive != value)
 			{
-				Debug.Log ("coucou");
 				mCameraArrive = value;
 				if (value)
 					DropLogs();

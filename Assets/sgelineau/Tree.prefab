@@ -500,7 +500,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130052}
-  m_Material: {fileID: 13400000, guid: a5e3b1e59f97d6b49abc144f05533c76, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -566,8 +566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912cff72b91fcf8459d76754d9fa26b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparentShader: {fileID: 4800000, guid: c86bf0e84f054164bb1fa0f57e24183f, type: 3}
+  opaqueShader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
   fallingStrength: 500
-  secondsBeforeDisappearing: 0
+  secondsBeforeDisappearing: 1
   secondsBlendingOut: 1
 --- !u!135 &13510740
 SphereCollider:

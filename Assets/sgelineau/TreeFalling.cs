@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
 
+	public Shader transparentShader;
+	public Shader opaqueShader;
+
 	public float fallingStrength = 200;
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
@@ -18,8 +21,6 @@ public class TreeFalling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//GameObject.Find("Cube").
-
 		if (isDying) {
 			t += Time.deltaTime * 0.2f;
 
@@ -28,6 +29,7 @@ public class TreeFalling : MonoBehaviour {
 				if (t >= secondsBeforeDisappearing) {
 					t = 0;
 					++animationPhase;
+					transform.Find("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.shader = transparentShader;
 				}
 				break;
 			case 1:
@@ -41,7 +43,7 @@ public class TreeFalling : MonoBehaviour {
 						logSpawner.GetComponent<LogSpawning>().spawnLog();
 					}
 				} else {
-					transform.Find ("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					transform.Find("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 				}
 				break;
 			}
@@ -59,7 +61,7 @@ public class TreeFalling : MonoBehaviour {
 			Vector3 forceDirection = (this.transform.position - forceSource).normalized;
 			rigidBody.AddForce(fallingStrength * forceDirection);
 
-			// launch death animation
+			// launch fade out animation
 			isDying = true;
 			t = 0;
 			animationPhase = 0;

@@ -6,14 +6,31 @@ public class TreeFalling : MonoBehaviour {
 	public float fallingStrength = 200;
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
+	public float timeBeforeSound = 1.1f;
 
-	bool isDying = false;
+	private AudioSource fallAudio;
+	bool misDying = false;
+	bool isDying
+	{
+		get { return misDying; }
+		set
+		{
+			if (misDying != value)
+			{
+				misDying = value;
+
+				if(value == true)
+					Invoke("StartSound", timeBeforeSound);
+			}
+		}
+	}
+
 	float t;
 	int animationPhase;
 
 	// Use this for initialization
 	void Start () {
-	
+		fallAudio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -72,5 +89,11 @@ public class TreeFalling : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void StartSound()
+	{
+		if(fallAudio)
+			fallAudio.Play();
 	}
 }

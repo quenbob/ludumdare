@@ -434,6 +434,22 @@ Prefab:
       propertyPath: groundHeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 140538, guid: 1ca4ef8498dc0dd45bb973d619eaea68, type: 2}
+    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: clearTag
+      value: BurnableTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: treeObject
+      value: 
+      objectReference: {fileID: 140538, guid: 1ca4ef8498dc0dd45bb973d619eaea68, type: 2}
+    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: clearTag
+      value: BurnableTree
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}

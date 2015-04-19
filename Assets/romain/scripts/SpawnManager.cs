@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour {
 	public float xMax = 100.0f;
 	public float zMin = -100.0f;
 	public float zMax = 100.0f;
+	public float yPos = 0.0f;
 	public bool canSpawn = true ;
 	public float clearRadiusAroundNewSpawn = 15.0f;
 	public string objectNameToAvoid = "Tree";
@@ -28,7 +29,7 @@ public class SpawnManager : MonoBehaviour {
 		
 		while(!ok && nbTry < 10) {
 			nbTry++;
-			pos = new Vector3(Random.Range (xMin, xMax), 0.0f, Random.Range (zMin, zMax));
+			pos = new Vector3(Random.Range (xMin, xMax), yPos, Random.Range (zMin, zMax));
 			Collider[] cols = Physics.OverlapSphere(pos, clearRadiusAroundNewSpawn);
 			ok = true;
 

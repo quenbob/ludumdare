@@ -79,6 +79,7 @@ MonoBehaviour:
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 50
   groundHeight: 0
+  initalTreeCount: 50
   player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -44,7 +44,6 @@ public class TreeScript : MonoBehaviour {
 				{
 					if(Time.time - FireStartedTime > TimeToBurnOthers * (numberOfFiresStarted+1))
 					{
-						Debug.Log("Burn!");
 						//Burn nearest tree
 
 						//float shortestDistance = 999999;
@@ -59,14 +58,12 @@ public class TreeScript : MonoBehaviour {
 							if (col.attachedRigidbody && col.attachedRigidbody.gameObject.tag == "Tree")
 							{
 
-	
-								Debug.Log("Burn It already!");
 								//Debug.Log(col.name);
 								//allTrees.Add(col.attachedRigidbody.gameObject);
 								//col.attachedRigidbody.gameObject.GetComponent<TreeScript>().SetThisOnFire();
 								GameObject treeObject = col.attachedRigidbody.gameObject.transform.parent.gameObject;
 
-								if(treeObject != gameObject)
+								if(treeObject != gameObject && treeObject.GetComponent<TreeScript>().TreeOnFire==false)
 								{
 									//Debug.Log(subModel.name);
 									//GameObject model = subModel.transform.parent.gameObject;
@@ -83,8 +80,7 @@ public class TreeScript : MonoBehaviour {
 								}
 
 
-
-
+							
 
 							}
 						}

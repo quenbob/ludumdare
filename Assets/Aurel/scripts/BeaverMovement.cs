@@ -15,7 +15,7 @@ public class BeaverMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(playerAttack.treeInRange)
+		if(playerAttack && playerAttack.treeInRange)
 		{
 			Move ();
 		}

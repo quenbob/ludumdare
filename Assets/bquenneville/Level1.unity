@@ -166,6 +166,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &620900992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 620900993}
+  - 114: {fileID: 620900994}
+  m_Layer: 0
+  m_Name: LogSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &620900993
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 620900992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 80, y: 45, z: 422}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!114 &620900994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 620900992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5920e1cdd75a53340b79d103cd0d275f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 163164, guid: 54a40a4a515a35b47a5caaa308d6de47, type: 2}
 --- !u!1 &623566687
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,30 +408,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11487734, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: scoreLabel
-      value: 
-      objectReference: {fileID: 713817266}
-    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: timeLabel
-      value: 
-      objectReference: {fileID: 301811840}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2125622051}
-    - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 392972942}
     - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2125622051}
+    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: timeLabel
+      value: 
+      objectReference: {fileID: 301811840}
+    - target: {fileID: 11487734, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: scoreLabel
+      value: 
+      objectReference: {fileID: 713817266}
+    - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 392972942}
     - target: {fileID: 11433414, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: logPile
       value: 
       objectReference: {fileID: 597249768}
+    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2125622051}
+    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: startTime
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_IsPrefabParent: 0

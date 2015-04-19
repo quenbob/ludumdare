@@ -13,9 +13,10 @@ public class TreeScript : MonoBehaviour {
 
 	private float FireStartedTime = -1.0f;
 	private int numberOfFiresStarted = 0;
+	private bool fireStarted = false;
 	// Use this for initialization
 	void Start () {
-		OnFireParticleSystem.Stop ();
+		OnFireParticleSystem.Pause ();
 	}
 
 	public void SetThisOnFire()
@@ -28,10 +29,11 @@ public class TreeScript : MonoBehaviour {
 
 		if(TreeOnFire)
 		{
-			if(!OnFireParticleSystem.IsAlive())
+			if(!fireStarted)
 			{
 				Debug.Log ("tree is on fire");
 				OnFireParticleSystem.Play ();
+				fireStarted = true;
 			}
 
 			if(FireStartedTime<0)
@@ -39,17 +41,17 @@ public class TreeScript : MonoBehaviour {
 				FireStartedTime = Time.time;
 
 			}
-			else if(Time.time - FireStartedTime>BurnLifetime){
-				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(0.0f,0.0f,0.0f),false);
+			else if((Time.time - FireStartedTime)>BurnLifetime){
+				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(1.0f,0.0f,0.0f),false);
 				Vector3 direction = Vector3.Normalize(transform.position);
 				//GetComponent<TreeFalling>().cutDownFrom(new Vector3(0.0f,0.0f,0.0f),false);
 			}
 
 			{
 
-				if(numberOfFiresStarted < MaxTreesToBurn)//if we don't do something like that, game may get really slow when there are a lot of fires started
+				if(numberOfFiresStarted < MaxTreesToBurn)
 				{
-					if(Time.time - FireStartedTime > TimeToBurnOthers * (numberOfFiresStarted+1))
+					if((Time.time - FireStartedTime) > (TimeToBurnOthers * (numberOfFiresStarted+1)))
 					{
 						//Burn nearest tree
 
@@ -70,12 +72,12 @@ public class TreeScript : MonoBehaviour {
 								//col.attachedRigidbody.gameObject.GetComponent<TreeScript>().SetThisOnFire();
 								GameObject treeObject = col.attachedRigidbody.gameObject.transform.parent.gameObject;
 
-								if(treeObject != gameObject && treeObject.GetComponent<TreeScript>().TreeOnFire==false)
+								if(treeObject != gameObject && treeObject.GetComponentInChildren<TreeScript>().TreeOnFire==false)
 								{
 									//Debug.Log(subModel.name);
 									//GameObject model = subModel.transform.parent.gameObject;
 									//GameObject treeObject = model.transform.parent.gameObject;
-									treeObject.GetComponent<TreeScript>().SetThisOnFire();
+									treeObject.GetComponentInChildren<TreeScript>().SetThisOnFire();
 									
 									numberOfFiresStarted = numberOfFiresStarted + 1;
 									

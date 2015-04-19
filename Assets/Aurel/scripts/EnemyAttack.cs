@@ -18,6 +18,10 @@ public class EnemyAttack : MonoBehaviour
 		if(other.gameObject == player)
 		{
 			playerInRange = true;
+		} else if (other.tag == "Tree") {
+			if (GetComponent<EnemyMovement>().isOnFire()) {
+				other.GetComponent<TreeScript>().SetThisOnFire();
+			}
 		}
 	}
 	
@@ -26,8 +30,6 @@ public class EnemyAttack : MonoBehaviour
 	{
 		if (other.gameObject == player) {
 			playerInRange = false;
-		} else if (other.tag == "Tree") {
-			other.GetComponent<TreeScript>().SetThisOnFire();
 		}
 	}
 	

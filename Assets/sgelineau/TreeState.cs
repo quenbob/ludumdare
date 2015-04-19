@@ -5,6 +5,13 @@ public enum TreeStateEnum {
 	Sprout, Grown, Stump
 }
 
+public enum TreeTypeEnum {
+	Type1 = 1,
+	Type2 = 2,
+	Type3 = 3,
+	Type4 = 4
+}
+
 public class TreeState : MonoBehaviour {
 
 	public TreeStateEnum initialState = TreeStateEnum.Sprout;
@@ -18,6 +25,39 @@ public class TreeState : MonoBehaviour {
 	public float springPhaseInitialScale = 0.1f;
 	public float springPhaseTargetScale = 1f;
 
+	private TreeTypeEnum mtreeType = TreeTypeEnum.Type1;
+	public TreeTypeEnum treeType
+	{
+		get { return mtreeType; }
+		set
+		{
+			if (mtreeType != value)
+			{
+				mtreeType = value;
+
+				transform.Find("Grown/Tree model/TreeTop1").gameObject.SetActive(false);
+				transform.Find("Grown/Tree model/TreeTop2").gameObject.SetActive(false);
+				transform.Find("Grown/Tree model/TreeTop3").gameObject.SetActive(false);
+				transform.Find("Grown/Tree model/TreeTop4").gameObject.SetActive(false);
+
+				switch(mtreeType)
+				{
+				case TreeTypeEnum.Type1:
+					transform.Find("Grown/Tree model/TreeTop1").gameObject.SetActive(true);
+					break;
+				case TreeTypeEnum.Type2:
+					transform.Find("Grown/Tree model/TreeTop2").gameObject.SetActive(true);
+					break;
+				case TreeTypeEnum.Type3:
+					transform.Find("Grown/Tree model/TreeTop3").gameObject.SetActive(true);
+					break;
+				case TreeTypeEnum.Type4:
+					transform.Find("Grown/Tree model/TreeTop4").gameObject.SetActive(true);
+					break;
+				}
+			}
+		}
+	}
 
 	private TreeStateEnum privateState = TreeStateEnum.Grown;
 	public TreeStateEnum currentState {
@@ -60,6 +100,8 @@ public class TreeState : MonoBehaviour {
 		stump = transform.Find("Stump").gameObject;
 
 		currentState = initialState;
+
+		treeType = (TreeTypeEnum)Random.Range(1, 4);
 	}
 	
 	// Update is called once per frame

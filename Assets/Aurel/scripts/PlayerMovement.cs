@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 		movement.Set(h, 0.0f, v);
 		movement = movement.normalized * speed * Time.deltaTime;
 
-		if (Rigidbody)
+		if (playerRigidbody)
 			playerRigidbody.MovePosition(transform.position + movement);
 		else
 			Debug.Log("Please attach a RigdBody to your Player GameObject");
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 		Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
 		Quaternion newRotation = Quaternion.Lerp(playerRigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
 
-		if(Rigidbody)
+		if(playerRigidbody)
 			playerRigidbody.MoveRotation(newRotation);
 		else
 			Debug.Log("Please attach a RigdBody to your Player GameObject");

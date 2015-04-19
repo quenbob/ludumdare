@@ -44,7 +44,8 @@ public class MaskManager : MonoBehaviour {
 
 		foreach (GameObject t in listCopy)
 		{
-			t.SetActive(true);
+			if (t)
+				t.SetActive(true);
 		}
 		listCopy.Clear();
 	}

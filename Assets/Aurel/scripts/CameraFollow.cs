@@ -13,9 +13,27 @@ public class CameraFollow : MonoBehaviour {
 	private Vector3 offset = new Vector3();
 	private Vector3 LogPosition = new Vector3();
 	private bool followPlayer = true;
-	
+	private LogSpawning script;
+	private ScoreManager scoreManager;
+
+	private bool mCameraArrive = false;
+	private bool cameraArrive
+	{
+		set
+		{
+			if (mCameraArrive != value)
+			{
+				mCameraArrive = value;
+				if (value)
+					DropLogs();
+			}
+		}
+	}
+
 	void Start ()
 	{
+		scoreManager = GetComponent<ScoreManager>();
+
 		if (target)
 			offset = Camera.main.transform.position - target.position;
 
@@ -34,6 +52,9 @@ public class CameraFollow : MonoBehaviour {
 		{
 			Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, LogPosition, smoothing * Time.deltaTime);
 			Camera.main.fieldOfView = maxFov;
+
+			if (Camera.main.transform.position == LogPosition)
+				cameraArrive = true;
 		}
 	}
 	
@@ -47,5 +68,32 @@ public class CameraFollow : MonoBehaviour {
 	public void ShowLogs()
 	{
 		followPlayer = false;
+	}
+
+	public void DropLogs()
+	{
+		GameObject logSpawner = GameObject.Find ("LogSpawner");
+
+		if (logSpawner && scoreManager)
+		{
+			script = logSpawner.GetComponent<LogSpawning>();
+			if (script)
+			{
+				InvokeRepeating ("SpawnLog", 0.5f, 0.3f);
+			}
+		}
+	}
+
+	private void SpawnLog()
+	{
+		if (script && scoreManager)
+		{
+			script.spawnLog();
+
+			scoreManager.currentScore--;
+
+			if (scoreManager.currentScore <= 0)
+				CancelInvoke("SpawnLog");
+		}
 	}
 }

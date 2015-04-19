@@ -87,7 +87,6 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void ChangeDirection()
 	{
-		Debug.Log ("change direction");
 		if (!nav.isActiveAndEnabled)
 			nav.enabled = true;
 		movement = new Vector3(Random.Range(70, 400), transform.position.y, Random.Range (30, 330));
@@ -97,7 +96,6 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void Stop()
 	{
-		Debug.Log ("stop");
 		if (nav.isActiveAndEnabled)
 			nav.enabled = false;
 

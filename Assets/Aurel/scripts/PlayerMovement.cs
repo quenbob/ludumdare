@@ -13,11 +13,13 @@ public class PlayerMovement : MonoBehaviour
 	private float recordedH = 0.0f;
 	private float recordedV = 0.0f;
 	private bool recorded = false;
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () 
 	{
 		playerRigidbody = GetComponent<Rigidbody>();
+		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate()
@@ -41,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
 			if (h != 0 || v != 0)
 				Turn(h, v);	
 		}
+
+		anim.SetBool ("isWalking", ((h != 0.0f || v != 0.0f) & !recorded));
 	}
 
 	void Move(float h, float v)

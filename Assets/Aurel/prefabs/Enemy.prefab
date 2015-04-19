@@ -97,7 +97,6 @@ GameObject:
   - 135: {fileID: 13563564}
   - 114: {fileID: 11496784}
   - 114: {fileID: 11438620}
-  - 114: {fileID: 11488596}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -404,18 +403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   sightRadius: 20
---- !u!114 &11488596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0399c4585d728674eb8e0fe8e15c01fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnFireParticleSystem: {fileID: 19874180}
 --- !u!114 &11496784
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,8 +10,8 @@ public class PressAnyKeyToRun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject player = GameObject.Find ("Player");
-		PlayerRunningAnimation runningAnimation = player.GetComponent<PlayerRunningAnimation> ();
+		GameObject enemy = GameObject.Find ("Enemy");
+		EnemyRunningAnimation runningAnimation = enemy.GetComponent<EnemyRunningAnimation> ();
 
 		if (Input.anyKey) {
 			runningAnimation.startRunning();

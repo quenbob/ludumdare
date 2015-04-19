@@ -16,7 +16,7 @@ public class WalkWithFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GameObject player = GameObject.Find ("Player");
-		PlayerRunningAnimation runningAnimation = player.GetComponent<PlayerRunningAnimation> ();
+		EnemyRunningAnimation runningAnimation = player.GetComponent<EnemyRunningAnimation> ();
 
 		if (Input.GetKeyDown ("space")) {
 			//OnFireParticleSystem.Play ();

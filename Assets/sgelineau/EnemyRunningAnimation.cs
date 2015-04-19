@@ -2,7 +2,7 @@
 using System.Collections;
 
 // should be named EnemyRunningAnimation
-public class PlayerRunningAnimation : MonoBehaviour {
+public class EnemyRunningAnimation : MonoBehaviour {
 
 	public float legWigglePerSecond = 2;
 	public float legExtentInDegrees = 45;
@@ -18,6 +18,7 @@ public class PlayerRunningAnimation : MonoBehaviour {
 
 
 	public void startRunning() {
+		Debug.Log ("start running");
 		if (!isRunning) {
 			t = 0;
 			isRunning = true;

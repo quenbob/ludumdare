@@ -113,6 +113,7 @@ MonoBehaviour:
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 20
   groundHeight: 10
+  initalTreeCount: 50
   player: {fileID: 2125622051}
 --- !u!82 &143354427
 AudioSource:
@@ -460,6 +461,10 @@ Prefab:
     - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: timeBetweenTwoSpawn
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: initalTreeCount
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}

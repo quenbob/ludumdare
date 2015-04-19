@@ -8,6 +8,7 @@ public class TreeFalling : MonoBehaviour {
 	public float secondsBlendingOut = 1;
 	public float timeBeforeSound = 1.1f;
 	public int timeAdded = 5;
+	public ParticleSystem DustParticleSystem;
 
 	private AudioSource fallAudio;
 	bool misDying = false;
@@ -21,7 +22,11 @@ public class TreeFalling : MonoBehaviour {
 				misDying = value;
 
 				if(value == true)
+				{
 					Invoke("StartSound", timeBeforeSound);
+					DustParticleSystem.Play ();
+					
+				}
 			}
 		}
 	}
@@ -32,6 +37,7 @@ public class TreeFalling : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		fallAudio = GetComponent<AudioSource>();
+		DustParticleSystem.Stop ();
 	}
 	
 	// Update is called once per frame

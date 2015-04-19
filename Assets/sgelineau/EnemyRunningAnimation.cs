@@ -18,7 +18,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 
 
 	public void startRunning() {
-		Debug.Log ("start running");
 		if (!isRunning) {
 			t = 0;
 			isRunning = true;

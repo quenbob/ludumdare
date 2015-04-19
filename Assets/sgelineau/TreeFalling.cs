@@ -36,7 +36,7 @@ public class TreeFalling : MonoBehaviour {
 				float alpha = 1 - t / secondsBlendingOut;
 				if (alpha < 0) {
 					alpha = 0;
-					Destroy (gameObject);
+					Destroy (transform.Find("..").gameObject);
 				} else {
 					transform.Find("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
 				}

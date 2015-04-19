@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// should be named EnemyRunningAnimation
 public class PlayerRunningAnimation : MonoBehaviour {
 
 	public float legWigglePerSecond = 2;

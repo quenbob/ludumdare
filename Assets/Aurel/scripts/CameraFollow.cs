@@ -5,8 +5,11 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform target;
 	public Transform logPile;
+	private float initialZoomOutSmoothing = 5.0f;
+	private float secondsToFullyZoomedOut = 5.0f;
 	public float smoothing = 5.0f;
-	public float minFov = 15f;
+	public float minFov = 5f;
+	private float targetFov = 30f;
 	public float maxFov = 60f;
 	public float sensitivity = 10f;
 
@@ -30,6 +33,9 @@ public class CameraFollow : MonoBehaviour {
 		}
 	}
 
+	private bool isAnimatingOut = true;
+	private float t = 0;
+
 	void Start ()
 	{
 		Camera.main.fieldOfView = minFov;
@@ -44,30 +50,37 @@ public class CameraFollow : MonoBehaviour {
 	
 	void FixedUpdate ()
 	{
-		if (followPlayer && target)
-		{
+		if (followPlayer && target) {
 			Vector3 targetCamPos = target.position + offset;
 			Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, targetCamPos, smoothing * Time.deltaTime);
-		}
-		else if (logPile)
-		{
+		} else if (logPile) {
 			Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, LogPosition, smoothing * Time.deltaTime);
 			Camera.main.fieldOfView = maxFov;
 
-			float dist = Vector3.Distance(Camera.main.transform.position, LogPosition);
+			float dist = Vector3.Distance (Camera.main.transform.position, LogPosition);
 
-			if (dist < 2.0f)
-			{
+			if (dist < 2.0f) {
 				cameraArrive = true;
 			}
 		}
 	}
 	
 	void Update () {
-		float fov  = Camera.main.fieldOfView;
-		fov -= Input.GetAxis("Mouse ScrollWheel") * sensitivity;
-		fov = Mathf.Clamp(fov, minFov, maxFov);
-		Camera.main.fieldOfView = fov;
+		if (isAnimatingOut) {
+			t += Time.deltaTime;
+			float f = (t / secondsToFullyZoomedOut);
+			f = f * f * f;
+			Camera.main.fieldOfView = (targetFov - minFov) * f + minFov;
+			if (t >= secondsToFullyZoomedOut) {
+				Debug.Log ("done zooming");
+				isAnimatingOut = false;
+			}
+		} else {
+			float fov = Camera.main.fieldOfView;
+			fov -= Input.GetAxis ("Mouse ScrollWheel") * sensitivity;
+			fov = Mathf.Clamp (fov, minFov, maxFov);
+			Camera.main.fieldOfView = fov;
+		}
 	}
 
 	public void ShowLogs()

@@ -119,7 +119,7 @@ MonoBehaviour:
   target: {fileID: 0}
   logPile: {fileID: 0}
   smoothing: 5
-  minFov: 15
+  minFov: 5
   maxFov: 60
   sensitivity: 10
 --- !u!114 &11435580

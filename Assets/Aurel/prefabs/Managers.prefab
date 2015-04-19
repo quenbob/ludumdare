@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 30
   timeLabel: {fileID: 0}
-  gameOverScreen: {fileID: 0}
+  sceneController: {fileID: 0}
 --- !u!114 &11469566
 MonoBehaviour:
   m_ObjectHideFlags: 1

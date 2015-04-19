@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 	public enum StateEnum
 	{
 		idle,
+		walk,
 		follow
 	}
 	public StateEnum currentState = StateEnum.idle;
@@ -15,6 +16,7 @@ public class EnemyMovement : MonoBehaviour {
 	private Rigidbody enemyRigidbody;
 	private Transform player;
 	private NavMeshAgent nav;
+	private float timeSinceLastChange = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,7 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentState == StateEnum.idle)
+		if (currentState != StateEnum.follow)
 		{
 			// Verify if player is in range
 			Collider[] cols = Physics.OverlapSphere(transform.position, sightRadius);
@@ -39,26 +41,68 @@ public class EnemyMovement : MonoBehaviour {
 				}
 			}
 
-			if (Random.Range(0, 100) > 90)
+			if (timeSinceLastChange > 3.0f)
+			{
+			int whatNext = Random.Range(0, 100);
+			if (whatNext > 95)
 				ChangeDirection();
+			else if (whatNext < 5)
+				Stop();
+			}
+			else
+			{
+				timeSinceLastChange += Time.deltaTime;
+			}
 
-			nav.SetDestination(movement);
+			if (nav.isActiveAndEnabled)
+				nav.SetDestination(movement);
 		}
 		else
 		{
-			if (player && nav)
+			if (!nav.isActiveAndEnabled)
+				nav.enabled = true;
+
+			// Verify if player is still in range
+			Collider[] cols = Physics.OverlapSphere(transform.position, sightRadius);
+
+			bool found = false;
+			foreach(Collider col in cols)
+			{
+				if (col.tag == "Player")
+				{
+					found = true;
+					break;
+				}
+			}
+
+			if (found && player && nav)
 			{
 				nav.SetDestination(player.position);
 			}
 			else
 			{
 				currentState = StateEnum.idle;
+				Stop();
 			}
 		}
 	}
 
 	private void ChangeDirection()
 	{
-		movement = new Vector3(Random.Range(70, 400), 10.0f, Random.Range (30, 330));
+		Debug.Log ("change direction");
+		if (!nav.isActiveAndEnabled)
+			nav.enabled = true;
+		movement = new Vector3(Random.Range(70, 400), transform.position.y, Random.Range (30, 330));
+
+		timeSinceLastChange = 0.0f;
+	}
+
+	private void Stop()
+	{
+		Debug.Log ("stop");
+		if (nav.isActiveAndEnabled)
+			nav.enabled = false;
+
+		timeSinceLastChange = 0.0f;
 	}
 }

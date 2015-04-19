@@ -354,6 +354,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1272422478}
     - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: player
       value: 
@@ -374,63 +378,36 @@ Prefab:
       propertyPath: timeLabel
       value: 
       objectReference: {fileID: 1186449312}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: xMin
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: xMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: zMin
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: zMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: xMin
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: xMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: zMin
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: zMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: groundHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: groundHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: initalTreeCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1272422478}
-    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
-      propertyPath: startTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1652096096}
-    m_RemovedComponents: []
+    - target: {fileID: 11460026, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: startTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: xMin
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: xMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: zMin
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: zMax
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: initalTreeCount
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1272422478 stripped

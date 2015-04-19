@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11460026}
   - 82: {fileID: 8231170}
   - 114: {fileID: 11487652}
+  - 114: {fileID: 11466540}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -142,9 +143,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a81a215c5c38341bf146d0122717db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 20
+  startTime: 5
   timeLabel: {fileID: 0}
   gameOverScreen: {fileID: 0}
+--- !u!114 &11466540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ead7682d9d28f4d88f09b6076e095f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnling: {fileID: 189828, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+  timeBeforeFirstSpawn: 3
+  timeBetweenTwoSpawn: 3
+  xMin: -100
+  xMax: 100
+  zMin: -100
+  zMax: 100
+  canSpawn: 1
+  clearRadiusAroundNewSpawn: 15
+  objectNameToAvoid: Enemy
 --- !u!114 &11469566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,14 +181,14 @@ MonoBehaviour:
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: .100000001
   timeBetweenTwoSpawn: 5
-  xMin: 67
-  xMax: 409
-  zMin: 25
-  zMax: 336
+  xMin: -100
+  xMax: 100
+  zMin: -100
+  zMax: 100
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 50
-  groundHeight: 10
+  groundHeight: 0
   initalTreeCount: 200
   player: {fileID: 0}
 --- !u!114 &11487652
@@ -183,15 +205,15 @@ MonoBehaviour:
   treeObject: {fileID: 133274, guid: a1760e35090fb5544b5f426140b1ead0, type: 2}
   timeBeforeFirstSpawn: 3
   timeBetweenTwoSpawn: 5
-  xMin: 139
-  xMax: 409
-  zMin: 336
-  zMax: 466
+  xMin: -100
+  xMax: 100
+  zMin: -100
+  zMax: 100
   canSpawn: 1
   clearRadiusAroundNewSpawn: 5
   radiusAroundPlayer: 20
-  groundHeight: 10
-  initalTreeCount: 50
+  groundHeight: 0
+  initalTreeCount: 0
   player: {fileID: 0}
 --- !u!114 &11487734
 MonoBehaviour:

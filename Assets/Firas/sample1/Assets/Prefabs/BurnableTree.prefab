@@ -642,6 +642,7 @@ MonoBehaviour:
   secondsBeforeDisappearing: 1
   secondsBlendingOut: 1
   timeBeforeSound: 1.29999995
+  timeAdded: 7
 --- !u!114 &11409684
 MonoBehaviour:
   m_ObjectHideFlags: 1

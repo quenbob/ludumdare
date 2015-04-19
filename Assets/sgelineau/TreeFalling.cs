@@ -7,6 +7,7 @@ public class TreeFalling : MonoBehaviour {
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
 	public float timeBeforeSound = 1.1f;
+	public int timeAdded = 5;
 
 	private AudioSource fallAudio;
 	bool misDying = false;
@@ -85,7 +86,7 @@ public class TreeFalling : MonoBehaviour {
 				// give the player more time
 				GameObject timerLabel = GameObject.Find("Managers");
 				if (timerLabel) {
-					timerLabel.GetComponent<TimerManager>().AddTime(5);
+					timerLabel.GetComponent<TimerManager>().AddTime(timeAdded);
 				}
 			}
 		}

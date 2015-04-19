@@ -12,6 +12,7 @@ public class TreesManager : MonoBehaviour {
 	public float zMax = 100.0f;
 	public bool canSpawn = true ;
 	public float clearRadiusAroundNewSpawn = 5.0f;
+	public string clearTag = "Tree";
 	public float radiusAroundPlayer = 20.0f;
 	public float groundHeight = 10.0f;
 	public int initalTreeCount = 0;
@@ -82,7 +83,7 @@ public class TreesManager : MonoBehaviour {
 			ok = true;
 			foreach (var col in cols)
 			{
-				if (col.attachedRigidbody && col.attachedRigidbody.gameObject.tag == "Tree")
+				if (col.attachedRigidbody && col.attachedRigidbody.gameObject.tag == clearTag)
 				{
 					ok = false;
 					break;

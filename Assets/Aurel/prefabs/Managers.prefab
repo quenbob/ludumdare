@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a81a215c5c38341bf146d0122717db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 5
+  startTime: 30
   timeLabel: {fileID: 0}
   gameOverScreen: {fileID: 0}
 --- !u!114 &11466540

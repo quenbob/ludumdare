@@ -33,6 +33,7 @@ public class CameraFollow : MonoBehaviour {
 
 	void Start ()
 	{
+		Camera.main.fieldOfView = minFov;
 		scoreManager = GetComponent<ScoreManager>();
 
 		if (target)

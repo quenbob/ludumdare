@@ -87,11 +87,7 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &1368732916 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 442162, guid: 594698f07a8290d468da68db57c048d5, type: 2}
-  m_PrefabInternal: {fileID: 1583309145}
---- !u!1001 &1583309145
+--- !u!1001 &474368474
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -130,9 +126,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 495826, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .608664691
+      objectReference: {fileID: 0}
+    - target: {fileID: 495826, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .446972519
+      objectReference: {fileID: 0}
+    - target: {fileID: 495826, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .566101551
+      objectReference: {fileID: 0}
+    - target: {fileID: 495826, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .33056289
+      objectReference: {fileID: 0}
+    - target: {fileID: 13610222, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13610222, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13610222, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_Center.z
+      value: .600000024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 594698f07a8290d468da68db57c048d5, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1368732916 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 442162, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+  m_PrefabInternal: {fileID: 474368474}
 --- !u!1001 &1642541624
 Prefab:
   m_ObjectHideFlags: 0

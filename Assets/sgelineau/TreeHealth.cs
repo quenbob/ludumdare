@@ -21,7 +21,6 @@ public class TreeHealth : MonoBehaviour {
 		{
 			Vector3 towardsPlayer = playerPosition - transform.position;
 			float angle = Mathf.Atan2(towardsPlayer.z, towardsPlayer.x);
-			Debug.Log (angle);
 
 			Quaternion upwards = Quaternion.Euler (315, 0, 0);
 			Quaternion resetToPositiveX = Quaternion.Euler (0, 90, 0);

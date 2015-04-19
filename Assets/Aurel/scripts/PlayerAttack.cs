@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour 
 {
+	public float timeToRevUp = 1.8f;
+	public float timeBetweenLoops = 0.5f;
 	public float timeBetweenAttacks = 0.5f;
 	public int attackDamage = 10;
 	public bool canAttack = true;
@@ -22,15 +24,18 @@ public class PlayerAttack : MonoBehaviour
 		}
 	}
 
-	private float timer;
+	private float attackTimer;
+	private float soundTimer;
+	private bool isPlayingSound = false;
+	private bool hasRevvedUp = false;
 	private TreeHealth health;
 	private TreeState state;
-	private AudioSource chompAudio;
+	private AudioSource[] beaverAudio;
 	private PlayerMovement playerMovement;
 
 	void Awake()
 	{
-		chompAudio = GetComponent<AudioSource>();
+		beaverAudio = GetComponents<AudioSource>();
 		playerMovement = GetComponent<PlayerMovement>();
 	}
 
@@ -62,23 +67,45 @@ public class PlayerAttack : MonoBehaviour
 			treeInRange = false;
 		}
 
-		timer += Time.deltaTime;
-		
-		if(timer >= timeBetweenAttacks && treeInRange)
-		{
-			Attack();
+		attackTimer += Time.deltaTime;
+		if (attackTimer >= timeBetweenAttacks && treeInRange) {
+			Attack ();
+		}
+
+		soundTimer += Time.deltaTime;
+		if (treeInRange && isPlayingSound) {
+			if (!hasRevvedUp) {
+				if (soundTimer >= timeToRevUp) {
+					hasRevvedUp = true;
+					soundTimer = 0;
+					beaverAudio[1].Play ();
+				}
+			} else {
+				if (soundTimer >= timeBetweenLoops) {
+					soundTimer = 0;
+					beaverAudio[1].Play ();
+				}
+			}
+		} else {
+			isPlayingSound = false;
+			hasRevvedUp = false;
 		}
 	}
 	
 	
 	void Attack()
 	{
-		timer = 0.0f;
+		attackTimer = 0.0f;
 		
 		if(health && state && health.currentHealth > 0 && state.currentState == TreeStateEnum.Grown)
 		{
-			chompAudio.Play ();
 			health.TakeDamage(attackDamage, transform.position);
+
+			if (!isPlayingSound) {
+				isPlayingSound = true;
+				soundTimer = 0;
+				beaverAudio[0].Play ();
+			}
 		}
 		else
 		{

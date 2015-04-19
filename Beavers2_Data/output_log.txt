@@ -16,7 +16,7 @@ Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2
 Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Aurélien\SkyDrive\Documents\Unity\Beavers2\Beavers2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.135 seconds
+- Completed reload, in  0.105 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -28,21 +28,21 @@ The referenced script on this Behaviour is missing!
 (Filename:  Line: 1713)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.149539 ms
+UnloadTime: 3.031084 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 193.
-Total: 0.157370 ms (FindLiveObjects: 0.016250 ms CreateObjectMapping: 0.008980 ms MarkObjects: 0.127435 ms  DeleteObjects: 0.004276 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 195.
+Total: 0.177896 ms (FindLiveObjects: 0.018815 ms CreateObjectMapping: 0.009407 ms MarkObjects: 0.144540 ms  DeleteObjects: 0.004703 ms)
 
 New level load: Level1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.549325 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.539062 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 365.
-Total: 0.379313 ms (FindLiveObjects: 0.027368 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.168488 ms  DeleteObjects: 0.167205 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 392.
+Total: 0.394708 ms (FindLiveObjects: 0.023092 ms CreateObjectMapping: 0.015822 ms MarkObjects: 0.193291 ms  DeleteObjects: 0.162074 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: f68 -> priority: 1 
-  Thread -> id: 365c -> priority: 1 
+  Thread -> id: 3230 -> priority: 1 
+  Thread -> id: 30ec -> priority: 1 

@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour 
 {
 	public float timeBetweenAttacks = 0.5f;
-	public int attackDamage = 10;	
+	public int attackDamage = 10;
+	public bool canAttack = true;
 
 	private bool m_treeInRange = false;
 	public bool treeInRange
@@ -49,12 +50,18 @@ public class PlayerAttack : MonoBehaviour
 		if(other.gameObject.tag == "Tree")
 		{
 			treeInRange = false;
+			return;
 		}
 	}
 	
 	
 	void Update()
 	{
+		if (!canAttack)
+		{
+			treeInRange = false;
+		}
+
 		timer += Time.deltaTime;
 		
 		if(timer >= timeBetweenAttacks && treeInRange)

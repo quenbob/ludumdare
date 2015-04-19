@@ -18,14 +18,17 @@ public class EnemyAttack : MonoBehaviour
 		if(other.gameObject == player)
 		{
 			playerInRange = true;
+		} else if (other.tag == "Tree") {
+			if (GetComponent<EnemyMovement>().isOnFire()) {
+				other.GetComponent<TreeScript>().SetThisOnFire();
+			}
 		}
 	}
 	
 	
 	void OnTriggerExit (Collider other)
 	{
-		if(other.gameObject == player)
-		{
+		if (other.gameObject == player) {
 			playerInRange = false;
 		}
 	}

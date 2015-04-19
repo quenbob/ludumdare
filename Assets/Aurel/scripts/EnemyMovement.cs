@@ -20,6 +20,10 @@ public class EnemyMovement : MonoBehaviour {
 	private ParticleSystem fireParticleSystem;
 	private EnemyRunningAnimation enemyRunningAnimation;
 
+	public bool isOnFire() {
+		return (currentState == StateEnum.follow);
+	}
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;

@@ -17,9 +17,12 @@ public class TreesManager : MonoBehaviour {
 	public int initalTreeCount = 0;
 	public GameObject player;
 
+	private TimerManager timeManager;
+
 	// Use this for initialization
 	void Start () 
 	{
+		timeManager = GetComponent<TimerManager>();
 		InvokeRepeating ("Spawn", timeBeforeFirstSpawn, timeBetweenTwoSpawn);
 
 		for(int i = 0; i < initalTreeCount; i++)
@@ -30,7 +33,7 @@ public class TreesManager : MonoBehaviour {
 	
 	void Spawn () 
 	{
-		if(!canSpawn)
+		if(!canSpawn || (timeManager && timeManager.isGameOver == true))
 		{
 			return;
 		}

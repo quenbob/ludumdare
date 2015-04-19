@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	public float speed = 60.0f;
 	public float turnSmoothing = 15f;
+	public bool canMove = true;
 
 	private Vector3 movement;
 	private Rigidbody playerRigidbody;
@@ -21,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		if (!canMove)
+			return;
+
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 

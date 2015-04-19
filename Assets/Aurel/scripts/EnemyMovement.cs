@@ -13,14 +13,12 @@ public class EnemyMovement : MonoBehaviour {
 	public float sightRadius = 50.0f;
 
 	private Vector3 movement;
-	private Rigidbody enemyRigidbody;
 	private Transform player;
 	private NavMeshAgent nav;
 	private float timeSinceLastChange = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-		enemyRigidbody = GetComponent<Rigidbody>();
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		nav = GetComponent <NavMeshAgent>();
 	}

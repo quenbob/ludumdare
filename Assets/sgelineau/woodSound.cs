@@ -29,7 +29,7 @@ public class woodSound : MonoBehaviour
 	{
 		Debug.Log (other);
 
-		if(alreadyDone || !trigger || other.gameObject.tag == "Tree" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player" | other.gameObject.tag == "TreeModel")
+		if(alreadyDone || !trigger || other.gameObject.tag == "Tree" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player" || other.gameObject.tag == "TreeModel")
 			return;
 		
 		if(fallAudio)

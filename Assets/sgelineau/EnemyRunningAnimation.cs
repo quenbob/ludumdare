@@ -28,7 +28,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	public void stopRunning() {
 		if (isRunning) {
 			targetWiggles = Mathf.Ceil(lastWiggles*2)/2;
-			Debug.Log(lastWiggles + ", " + targetWiggles);
 			isRunning = false;
 		}
 	}

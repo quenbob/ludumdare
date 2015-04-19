@@ -28,6 +28,7 @@ GameObject:
   - 33: {fileID: 3335916}
   - 23: {fileID: 2373224}
   - 95: {fileID: 9574416}
+  - 136: {fileID: 13653896}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -283,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.31999993, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466058}
@@ -621,6 +622,19 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!136 &13653896
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 3}
 --- !u!136 &13686116
 CapsuleCollider:
   m_ObjectHideFlags: 1

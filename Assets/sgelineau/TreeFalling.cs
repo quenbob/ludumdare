@@ -3,9 +3,6 @@ using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
 
-	public Shader transparentShader;
-	public Shader opaqueShader;
-
 	public float fallingStrength = 200;
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
@@ -29,7 +26,6 @@ public class TreeFalling : MonoBehaviour {
 				if (t >= secondsBeforeDisappearing) {
 					t = 0;
 					++animationPhase;
-					transform.Find("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.shader = transparentShader;
 				}
 				break;
 			case 1:
@@ -38,7 +34,7 @@ public class TreeFalling : MonoBehaviour {
 					alpha = 0;
 					Destroy (transform.Find("..").gameObject);
 				} else {
-					transform.Find("Grown/Tree model/Tree").gameObject.GetComponent<Renderer> ().material.SetFloat ("_AlphaMultiplier", alpha);
+					GetComponent<TreeTransparency>().setAlpha(alpha);
 				}
 				break;
 			}

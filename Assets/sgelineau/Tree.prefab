@@ -178,6 +178,7 @@ GameObject:
   - 114: {fileID: 11461794}
   - 114: {fileID: 11456766}
   - 136: {fileID: 13641440}
+  - 114: {fileID: 11488712}
   m_Layer: 0
   m_Name: Model
   m_TagString: Tree
@@ -566,11 +567,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912cff72b91fcf8459d76754d9fa26b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transparentShader: {fileID: 4800000, guid: c86bf0e84f054164bb1fa0f57e24183f, type: 3}
-  opaqueShader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
   fallingStrength: 500
   secondsBeforeDisappearing: 1
   secondsBlendingOut: 1
+--- !u!114 &11488712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a36940a50bee0a4d8b8e71dc3c17e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparentShader: {fileID: 4800000, guid: c86bf0e84f054164bb1fa0f57e24183f, type: 3}
+  opaqueShader: {fileID: 4800000, guid: e4d31293fd5f5514697b6392e493a7d1, type: 3}
 --- !u!135 &13510740
 SphereCollider:
   m_ObjectHideFlags: 1

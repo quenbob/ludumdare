@@ -11,6 +11,7 @@ public class TimerManager : MonoBehaviour {
 	private CameraFollow cameraScript;
 	private PlayerAttack playerAttack;
 	private PlayerMovement playerMovement;
+	private float offsetSinceStartup = 0.0f;
 
 	// Use this for initialization
 	void Start() 
@@ -24,12 +25,14 @@ public class TimerManager : MonoBehaviour {
 			playerAttack = player.GetComponent<PlayerAttack>();
 			playerMovement = player.GetComponent<PlayerMovement>();
 		}
+
+		offsetSinceStartup = Time.realtimeSinceStartup;
 	}
 	
 	// Update is called once per frame
 	void Update() 
 	{
-		float timeRemaining = startTime - Time.realtimeSinceStartup;
+		float timeRemaining = startTime - Time.realtimeSinceStartup + offsetSinceStartup;
 		int min = (int)(timeRemaining / 60);
 		int sec = (int)(timeRemaining - min*60);
 		string dixs = (sec < 10) ? "0" : "";
@@ -40,7 +43,7 @@ public class TimerManager : MonoBehaviour {
 			timeLabel.text = "Time: " + dixm + min + ":" + dixs + ((sec > 0) ? sec : 0).ToString();
 		}
 
-		if(Time.realtimeSinceStartup > startTime)
+		if(timeRemaining > startTime)
 		{
 			isGameOver = true;
 

@@ -16,6 +16,10 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	private float lastWiggles = 0;
 	private float targetWiggles = 0;
 
+	GameObject enemyModel;
+	GameObject leftLeg;
+	GameObject rightLeg;
+	private float origHeight;
 
 	public void startRunning() {
 		if (!isRunning) {
@@ -34,7 +38,10 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		enemyModel = transform.Find("Model").gameObject;
+		leftLeg = transform.Find("Model/Body/Left leg").gameObject;
+		rightLeg = transform.Find("Model/Body/Right leg").gameObject;
+		origHeight = enemyModel.transform.position.y;
 	}
 
 	// Update is called once per frame
@@ -49,13 +56,9 @@ public class EnemyRunningAnimation : MonoBehaviour {
 
 		lastWiggles = wiggles;
 		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
-		float height = Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
+		float height = origHeight + Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
 
-		GameObject playerModel = GameObject.Find("Model");
-		GameObject leftLeg = GameObject.Find("Left leg");
-		GameObject rightLeg = GameObject.Find("Right leg");
-
-		playerModel.transform.position = new Vector3(playerModel.transform.position.x, height, playerModel.transform.position.z);
+		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height, enemyModel.transform.position.z);
 		leftLeg.transform.rotation = Quaternion.Euler(new Vector3 (angle, 0, 0));
 		rightLeg.transform.rotation = Quaternion.Euler(new Vector3 (-angle, 0, 0));
 	}

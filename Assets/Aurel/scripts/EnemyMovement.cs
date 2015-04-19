@@ -34,6 +34,7 @@ public class EnemyMovement : MonoBehaviour {
 		fireParticleSystem.Pause ();
 
 		enemyRunningAnimation = GetComponent<EnemyRunningAnimation> ();
+		enemyRunningAnimation.startRunning ();
 	}
 	
 	// Update is called once per frame

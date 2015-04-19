@@ -24,11 +24,16 @@ public class MaskManager : MonoBehaviour
 		{
 			RaycastHit hit = hits[i];
 			GameObject tree = hit.transform.gameObject;
-			if (tree)
+			if (tree && tree.tag == "Tree")
 			{
 				if (listeMasked.Contains(tree) == false)
 				{
-					//tree.transform.position.Set();
+					TreeTransparency script = tree.GetComponentInChildren<TreeTransparency>();
+					if (script)
+					{
+						script.makeTransparent();
+					}
+
 					listeMasked.Add(tree);
 				}
 				else
@@ -41,8 +46,15 @@ public class MaskManager : MonoBehaviour
 
 		foreach (GameObject t in listCopy)
 		{
-			/*if (t)
-				t.SetActive(true);*/
+			if (t)
+			{
+				TreeTransparency script = t.GetComponentInChildren<TreeTransparency>();
+				if (script)
+				{
+					script.makeOpaque();
+				}
+				listeMasked.Remove(t);
+			}
 		}
 		listCopy.Clear();
 	}

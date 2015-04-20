@@ -143,6 +143,7 @@ public class EnemyMovement : MonoBehaviour {
 		} else {
 			isPlayingSound = false;
 			hasFlamedUp = false;
+			flameAudio[1].Stop();
 		}
 	}
 

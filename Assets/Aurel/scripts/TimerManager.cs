@@ -8,6 +8,9 @@ public class TimerManager : MonoBehaviour {
 	public Text timeLabel;
 	public SceneController sceneController;
 
+	public int secondsToBeepFor = 5;
+	private int lastSecondBeepedFor = -1;
+
 	private bool mIsPaused = false;
 	public bool isPaused {
 		get { return mIsPaused; }
@@ -74,6 +77,12 @@ public class TimerManager : MonoBehaviour {
 
 		timeRemaining = startTime - Time.realtimeSinceStartup + offsetSinceStartup;
 
+		int intTimeRemaining = (int)timeRemaining;
+		if (intTimeRemaining <= secondsToBeepFor && intTimeRemaining != lastSecondBeepedFor) {
+			lastSecondBeepedFor = intTimeRemaining;
+			Beep ();
+		}
+
 		int min = (int)(timeRemaining / 60);
 		int sec = (int)(timeRemaining - min*60);
 		string dixs = (sec < 10) ? "0" : "";
@@ -93,6 +102,13 @@ public class TimerManager : MonoBehaviour {
 	public void AddTime(int amount) 
 	{
 		startTime += amount;
+	}
+
+	public void Beep() {
+		GameObject secondsBeeper = GameObject.Find ("SecondsBeeper");
+		if (secondsBeeper) {
+			secondsBeeper.GetComponent<AudioSource>().Play();
+		}
 	}
 
 	public void Pause()

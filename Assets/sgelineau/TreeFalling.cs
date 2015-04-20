@@ -59,8 +59,6 @@ public class TreeFalling : MonoBehaviour {
 			case 1:
 				float alpha = 1 - t / secondsBlendingOut;
 				if (alpha < 0) {
-					Vector3 p = transform.position;
-					GameObject.Instantiate(bonusObject, p, Quaternion.Euler(0,0,0));
 					Destroy (transform.Find("..").gameObject);
 				} else {
 					GetComponent<TreeTransparency>().setAlpha(alpha);
@@ -88,6 +86,10 @@ public class TreeFalling : MonoBehaviour {
 
 			if(score)
 			{
+				// spawn power up
+				Vector3 p = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+				GameObject.Instantiate(bonusObject, p, Quaternion.Euler(0,0,0));
+
 				// increment score
 				GameObject scoreLabel = GameObject.Find("Managers");
 				if (scoreLabel) {

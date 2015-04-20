@@ -6,12 +6,10 @@ public class EnemyRunningAnimation : MonoBehaviour {
 
 	private bool isRunning = false;
 	private bool rightLegFirst = true;
-	GameObject enemyModel;
 	GameObject leftLeg;
 	GameObject rightLeg;
 	GameObject leftArm;
 	GameObject rightArm;
-	float origHeight;
 	Quaternion originLeftArmRotation;
 	Quaternion originRightArmRotation;
 	Quaternion originLeftLegRotation;
@@ -38,12 +36,10 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		enemyModel = transform.Find("Model").gameObject;
 		leftLeg = transform.Find("Model/BearMesh 1/BearLeftLeg").gameObject;
 		rightLeg = transform.Find("Model/BearMesh 1/BearRightLegs").gameObject;
 		leftArm = transform.Find("Model/BearMesh 1/BearLeftArm").gameObject;
 		rightArm = transform.Find("Model/BearMesh 1/BearBody/BearRightArm").gameObject;
-		origHeight = enemyModel.transform.position.y;
 		originLeftArmRotation = leftArm.transform.localRotation;
 		originRightArmRotation = rightArm.transform.localRotation;
 		originLeftLegRotation = leftLeg.transform.localRotation;
@@ -65,7 +61,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 
 		Debug.Log(totalRotation);
 
-		float value = 50.0f * Time.deltaTime * ((rightLegFirst) ? 1 : -1);
 		leftLeg.transform.Rotate(new Vector3 (angle, 0.0f, 0.0f));
 		rightLeg.transform.Rotate(new Vector3 (-angle, 0.0f, 0.0f));
 		leftArm.transform.Rotate(new Vector3 (-angle/1.5f, 0.0f, 0.0f));

@@ -450,6 +450,18 @@ Prefab:
       propertyPath: clearTag
       value: Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 11487652, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: groundHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437506, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: groundHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435580, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
+      propertyPath: groundHeight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11466540, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
@@ -738,12 +750,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 13610222, guid: 594698f07a8290d468da68db57c048d5, type: 2}
-      propertyPath: m_Radius
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 105638, guid: 594698f07a8290d468da68db57c048d5, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 11447526, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

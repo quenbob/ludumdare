@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TreeFalling : MonoBehaviour {
 
+	public GameObject bonusObject;
+
 	public float fallingStrength = 200;
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
@@ -57,7 +59,7 @@ public class TreeFalling : MonoBehaviour {
 			case 1:
 				float alpha = 1 - t / secondsBlendingOut;
 				if (alpha < 0) {
-					alpha = 0;
+					GameObject.Instantiate(bonusObject, transform.position, transform.rotation);
 					Destroy (transform.Find("..").gameObject);
 				} else {
 					GetComponent<TreeTransparency>().setAlpha(alpha);

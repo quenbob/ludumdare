@@ -7,6 +7,7 @@ public class TreeFalling : MonoBehaviour {
 	public float secondsBeforeDisappearing = 0;
 	public float secondsBlendingOut = 1;
 	public float timeBeforeSound = 1.1f;
+	public float timeBeforeDust = 0.5f;
 	public int timeAdded = 5;
 	public ParticleSystem DustParticleSystem;
 
@@ -24,6 +25,7 @@ public class TreeFalling : MonoBehaviour {
 				if(value == true)
 				{
 					Invoke("StartSound", timeBeforeSound);
+					Invoke("StartDust", timeBeforeDust);
 
 					
 				}
@@ -100,8 +102,12 @@ public class TreeFalling : MonoBehaviour {
 
 	void StartSound()
 	{
-		DustParticleSystem.Play ();
 		if(fallAudio)
 			fallAudio.Play();
+	}
+
+	void StartDust()
+	{
+		DustParticleSystem.Play ();
 	}
 }

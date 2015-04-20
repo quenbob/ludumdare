@@ -59,8 +59,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 			rightLegFirst = true;
 		}
 
-		Debug.Log(totalRotation);
-
 		leftLeg.transform.Rotate(new Vector3 (angle, 0.0f, 0.0f));
 		rightLeg.transform.Rotate(new Vector3 (-angle, 0.0f, 0.0f));
 		leftArm.transform.Rotate(new Vector3 (-angle/1.5f, 0.0f, 0.0f));

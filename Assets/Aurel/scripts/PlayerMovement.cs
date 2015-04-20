@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 	public float speed = 60.0f;
 	public float turnSmoothing = 15f;
 	public bool canMove = true;
+	public float accelerometerSpeed = 1.5f;
 
 	private Vector3 movement;
 	private Rigidbody playerRigidbody;
@@ -26,26 +27,39 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (!canMove || timeManager.isPaused)
+		if (!canMove || timeManager.isPaused) {
 			return;
+		}
 
-		float h = Input.GetAxisRaw("Horizontal");
-		float v = Input.GetAxisRaw("Vertical");
+		updateMove();
+	}
+	
+	void updateMove() {
+		float h;
+		float v;
 
-		if (recorded)
-		{
-			if (h != recordedH || v != recordedV)
+		if (Input.acceleration.x != 0) {
+			h = Input.acceleration.x;
+			v = Input.acceleration.y;
+		} else {
+			h = Input.GetAxisRaw("Horizontal");
+			v = Input.GetAxisRaw("Vertical");
+		}
+
+		if (recorded) {
+			if (h != recordedH || v != recordedV) {
 				recorded = false;
+			}
 		}
-
-		if (!recorded)
-		{
+		
+		if (!recorded) {
 			Move (h, v);
-
-			if (h != 0 || v != 0)
-				Turn(h, v);	
+			
+			if (h != 0 || v != 0) {
+				Turn(h, v);
+			}
 		}
-
+		
 		anim.SetBool ("isWalking", ((h != 0.0f || v != 0.0f) & !recorded));
 	}
 
@@ -54,10 +68,11 @@ public class PlayerMovement : MonoBehaviour
 		movement.Set(h, 0.0f, v);
 		movement = movement.normalized * speed * Time.deltaTime;
 
-		if (playerRigidbody)
-			playerRigidbody.MovePosition(transform.position + movement);
-		else
-			Debug.Log("Please attach a RigdBody to your Player GameObject");
+		if (playerRigidbody) {
+			playerRigidbody.MovePosition (transform.position + movement);
+		} else {
+			Debug.Log ("Please attach a RigdBody to your Player GameObject");
+		}
 	}
 	
 	void Turn(float h, float v) 

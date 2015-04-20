@@ -5,7 +5,7 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform target;
 	public Transform logPile;
-	private float secondsToFullyZoomedOut = 5.0f;
+	private float secondsToFullyZoomedOut = 2.0f;
 	public float smoothing = 5.0f;
 	public float minFov = 5f;
 	private float targetFov = 30f;
@@ -68,7 +68,7 @@ public class CameraFollow : MonoBehaviour {
 		if (isAnimatingOut) {
 			t += Time.deltaTime;
 			float f = (t / secondsToFullyZoomedOut);
-			f = f * f * f;
+			f = f * f * f * f * f * f * f;
 			Camera.main.fieldOfView = (targetFov - minFov) * f + minFov;
 			if (t >= secondsToFullyZoomedOut) {
 				isAnimatingOut = false;

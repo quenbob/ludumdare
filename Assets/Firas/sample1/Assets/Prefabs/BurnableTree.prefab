@@ -989,6 +989,7 @@ MonoBehaviour:
   secondsBeforeDisappearing: 1
   secondsBlendingOut: 1
   timeBeforeSound: 1.29999995
+  timeBeforeDust: .5
   timeAdded: 7
   DustParticleSystem: {fileID: 19891968}
 --- !u!114 &11409684

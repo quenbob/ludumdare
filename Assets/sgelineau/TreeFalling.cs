@@ -59,7 +59,8 @@ public class TreeFalling : MonoBehaviour {
 			case 1:
 				float alpha = 1 - t / secondsBlendingOut;
 				if (alpha < 0) {
-					GameObject.Instantiate(bonusObject, transform.position, Quaternion.Euler(0,0,0));
+					Vector3 p = transform.position;
+					GameObject.Instantiate(bonusObject, p, Quaternion.Euler(0,0,0));
 					Destroy (transform.Find("..").gameObject);
 				} else {
 					GetComponent<TreeTransparency>().setAlpha(alpha);

@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 21e46f12489446f498ab38c67be2910e
+timeCreated: 1429488179
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BearBody
+    100002: BearEar
+    100004: BearEye
+    100006: BearHead
+    100008: BearLeftArm
+    100010: BearLeftFeet
+    100012: BearLeftFinger
+    100014: BearLeftLeg
+    100016: BearLeftToe
+    100018: //RootNode
+    100020: BearNose
+    100022: BearRightArm
+    100024: BearRightFinger
+    100026: BearRightLegs
+    100028: BearRightToe
+    100030: BearRigthFeet
+    100032: Cone013
+    400000: BearBody
+    400002: BearEar
+    400004: BearEye
+    400006: BearHead
+    400008: BearLeftArm
+    400010: BearLeftFeet
+    400012: BearLeftFinger
+    400014: BearLeftLeg
+    400016: BearLeftToe
+    400018: //RootNode
+    400020: BearNose
+    400022: BearRightArm
+    400024: BearRightFinger
+    400026: BearRightLegs
+    400028: BearRightToe
+    400030: BearRigthFeet
+    400032: Cone013
+    2300000: BearBody
+    2300002: BearEar
+    2300004: BearEye
+    2300006: BearHead
+    2300008: BearLeftArm
+    2300010: BearLeftFeet
+    2300012: BearLeftFinger
+    2300014: BearLeftLeg
+    2300016: BearLeftToe
+    2300018: BearNose
+    2300020: BearRightArm
+    2300022: BearRightFinger
+    2300024: BearRightLegs
+    2300026: BearRightToe
+    2300028: BearRigthFeet
+    2300030: Cone013
+    3300000: BearBody
+    3300002: BearEar
+    3300004: BearEye
+    3300006: BearHead
+    3300008: BearLeftArm
+    3300010: BearLeftFeet
+    3300012: BearLeftFinger
+    3300014: BearLeftLeg
+    3300016: BearLeftToe
+    3300018: BearNose
+    3300020: BearRightArm
+    3300022: BearRightFinger
+    3300024: BearRightLegs
+    3300026: BearRightToe
+    3300028: BearRigthFeet
+    3300030: Cone013
+    4300000: BearBody
+    4300002: BearHead
+    4300004: Cone013
+    4300006: BearEye
+    4300008: BearNose
+    4300010: BearEar
+    4300012: BearRightArm
+    4300014: BearRightFinger
+    4300016: BearLeftLeg
+    4300018: BearLeftFeet
+    4300020: BearLeftToe
+    4300022: BearRightLegs
+    4300024: BearRigthFeet
+    4300026: BearRightToe
+    4300028: BearLeftArm
+    4300030: BearLeftFinger
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

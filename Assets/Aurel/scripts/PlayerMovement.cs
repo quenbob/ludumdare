@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 	public float turnSmoothing = 15f;
 	public bool canMove = true;
 	public float accelerometerSpeed = 1.5f;
+	public float accelerometerDeadZone = 0.075f;
 
 	private Vector3 movement;
 	private Rigidbody playerRigidbody;
@@ -45,6 +46,14 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.acceleration.x != 0) {
 			h = Input.acceleration.x;
 			v = Input.acceleration.y;
+
+			if((h > 0 && h < accelerometerDeadZone) || (h < 0 && h > -accelerometerDeadZone)) {
+				h = 0f;
+			}
+			
+			if((v > 0 && v < accelerometerDeadZone) || (v < 0 && v > -accelerometerDeadZone)) {
+				v = 0f;
+			}
 		} else {
 			h = Input.GetAxisRaw("Horizontal");
 			v = Input.GetAxisRaw("Vertical");

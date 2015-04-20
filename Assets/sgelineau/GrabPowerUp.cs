@@ -21,6 +21,8 @@ public class GrabPowerUp : MonoBehaviour {
 			transform.Find("PowerUpEffect 1").GetComponent<ParticleSystem>().Stop ();
 			pickUpEffect.Play ();
 			GameObject.Destroy(gameObject, 3);
+
+			GameObject.Find("Managers").GetComponent<TimerManager>().AddTime(10);
 		}
 	}
 }

@@ -147,6 +147,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1882227484}
     - target: {fileID: 11485020, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
+      propertyPath: endMessage
+      value: 
+      objectReference: {fileID: 605242785}
+    - target: {fileID: 11485020, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
       propertyPath: loseScore
       value: 
       objectReference: {fileID: 1022317086}
@@ -388,6 +392,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &605242785 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11435086, guid: 9466180a04c294c498fed8a795af341b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1022317085}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &612774426 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11470430, guid: 0c1535bfe06b53c4da80e1cc81153b08,
@@ -787,6 +797,18 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 413068698}
+    - target: {fileID: 109830, guid: 9466180a04c294c498fed8a795af341b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22447874, guid: 9466180a04c294c498fed8a795af341b, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22447874, guid: 9466180a04c294c498fed8a795af341b, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1121
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9466180a04c294c498fed8a795af341b, type: 2}
   m_IsPrefabParent: 0

@@ -40,6 +40,9 @@ public class EnemyAttack : MonoBehaviour
 		{
 			TimerManager timerManager = GameObject.Find ("Managers").GetComponent<TimerManager>();
 			timerManager.isGameOver = true;
+
+			SceneController sceneController = GameObject.Find ("SceneController").GetComponent<SceneController>();
+			sceneController.EndGame("Mauled and burned to death!");
 		}
 	}
 }

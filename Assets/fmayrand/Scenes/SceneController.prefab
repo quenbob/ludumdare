@@ -43,6 +43,7 @@ MonoBehaviour:
   hudOverlay: {fileID: 0}
   loseOverlay: {fileID: 0}
   creditsOverlay: {fileID: 0}
+  endMessage: {fileID: 0}
   loseScore: {fileID: 0}
   levelManager: {fileID: 0}
 --- !u!1001 &100100000

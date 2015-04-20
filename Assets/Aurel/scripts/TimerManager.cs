@@ -29,9 +29,6 @@ public class TimerManager : MonoBehaviour {
 
 				if (value)
 				{
-					if (sceneController)
-						sceneController.EndGame();
-					
 					if (cameraScript)
 						cameraScript.ShowLogs();
 					
@@ -96,6 +93,9 @@ public class TimerManager : MonoBehaviour {
 		if(timeRemaining <= 0)
 		{
 			isGameOver = true;
+
+			if (sceneController)
+				sceneController.EndGame("Time's Up!");
 		}
 	}
 

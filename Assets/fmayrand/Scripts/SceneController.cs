@@ -8,6 +8,7 @@ public class SceneController : MonoBehaviour {
 	[SerializeField] private GameObject hudOverlay;
 	[SerializeField] private GameObject loseOverlay;
 	[SerializeField] private GameObject creditsOverlay;
+	[SerializeField] private Text endMessage;
 	[SerializeField] private Text loseScore;
 	[SerializeField] private LevelManager levelManager;
 
@@ -39,7 +40,8 @@ public class SceneController : MonoBehaviour {
 	public void ResumeGame() {
 		Debug.Log("Resume game");
 		if (isGameFinished) {
-			EndGame();
+			menuOverlay.SetActive(false);
+			loseOverlay.SetActive(true);
 			return;
 		}
 
@@ -50,8 +52,12 @@ public class SceneController : MonoBehaviour {
 		timerManager.Resume();
 	}
 
-	public void EndGame() {
+	public void EndGame(string message) {
 		Debug.Log("End game");
+		if (isGameFinished) {
+			return;
+		}
+
 		isGameFinished = true;
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(false);
@@ -64,6 +70,7 @@ public class SceneController : MonoBehaviour {
 			loseScore.text = scoreManager.currentScore.ToString() + " trees cut";
 		}
 
+		endMessage.text = message;
 		loseOverlay.SetActive(true);
 	}
 

@@ -4,21 +4,23 @@ using System.Collections;
 // should be named EnemyRunningAnimation
 public class EnemyRunningAnimation : MonoBehaviour {
 
-	public float legWigglePerSecond = 2;
-	public float legExtentInDegrees = 45;
+	public float legWigglePerSecond = 2.0f;
+	public float legExtentInDegrees = 45.0f;
 	public float bounceHeight = 0.1f;
 
 	private bool isRunning = false;
 
 	private bool rightLegFirst = true;
-	private float t = 0;
+	private float t = 0.0f;
 
-	private float lastWiggles = 0;
-	private float targetWiggles = 0;
+	private float lastWiggles = 0.0f;
+	private float targetWiggles = 0.0f;
 
 	GameObject enemyModel;
 	GameObject leftLeg;
 	GameObject rightLeg;
+	GameObject leftArm;
+	GameObject rightArm;
 	private float origHeight;
 
 	public void startRunning() {
@@ -31,7 +33,7 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	
 	public void stopRunning() {
 		if (isRunning) {
-			targetWiggles = Mathf.Ceil(lastWiggles*2)/2;
+			targetWiggles = 0.0f; //Mathf.Ceil(lastWiggles*2)/2;
 			isRunning = false;
 		}
 	}
@@ -39,8 +41,10 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemyModel = transform.Find("Model").gameObject;
-		leftLeg = transform.Find("Model/Body/Left leg").gameObject;
-		rightLeg = transform.Find("Model/Body/Right leg").gameObject;
+		leftLeg = transform.Find("Model/BearMesh 1/BearLeftLeg").gameObject;
+		rightLeg = transform.Find("Model/BearMesh 1/BearRightLegs").gameObject;
+		leftArm = transform.Find("Model/BearMesh 1/BearLeftArm").gameObject;
+		rightArm = transform.Find("Model/BearMesh 1/BearBody/BearRightArm").gameObject;
 		origHeight = enemyModel.transform.position.y;
 	}
 
@@ -59,7 +63,9 @@ public class EnemyRunningAnimation : MonoBehaviour {
 		float height = origHeight + Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
 
 		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height, enemyModel.transform.position.z);
-		leftLeg.transform.rotation = Quaternion.Euler(new Vector3 (angle, 0, 0));
-		rightLeg.transform.rotation = Quaternion.Euler(new Vector3 (-angle, 0, 0));
+		leftLeg.transform.rotation = Quaternion.Euler(new Vector3 (angle-30, 0, 0));
+		rightLeg.transform.rotation = Quaternion.Euler(new Vector3 (-angle-30, 0, 0));
+		leftArm.transform.rotation = Quaternion.Euler(new Vector3 (-angle-70, 0, 0));
+		rightArm.transform.rotation = Quaternion.Euler(new Vector3 (angle-70, 0, 0));
 	}
 }

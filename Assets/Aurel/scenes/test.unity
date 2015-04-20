@@ -408,11 +408,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11435580, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11437506, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11469566, guid: e483a0229bb50fd459d3300bde3eb3fa, type: 2}
       propertyPath: xMin
@@ -741,6 +741,10 @@ Prefab:
     - target: {fileID: 13610222, guid: 594698f07a8290d468da68db57c048d5, type: 2}
       propertyPath: m_Radius
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 105638, guid: 594698f07a8290d468da68db57c048d5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 594698f07a8290d468da68db57c048d5, type: 2}

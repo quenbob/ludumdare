@@ -17,6 +17,7 @@ public class CameraFollow : MonoBehaviour {
 	private bool followPlayer = true;
 	private LogSpawning script;
 	private ScoreManager scoreManager;
+	private int endScore = 0;
 
 	private bool mCameraArrive = false;
 	private bool cameraArrive
@@ -95,6 +96,7 @@ public class CameraFollow : MonoBehaviour {
 			script = logSpawner.GetComponent<LogSpawning>();
 			if (script)
 			{
+				endScore = scoreManager.currentScore;
 				InvokeRepeating ("SpawnLog", 0.5f, 0.3f);
 			}
 		}
@@ -104,10 +106,10 @@ public class CameraFollow : MonoBehaviour {
 	{
 		if (script && scoreManager)
 		{
-			if (scoreManager.currentScore > 0)
+			if (endScore > 0)
 			{
 				script.spawnLog();
-				scoreManager.currentScore--;
+				endScore--;
 			}
 			else
 			{

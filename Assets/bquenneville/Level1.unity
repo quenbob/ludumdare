@@ -143,13 +143,17 @@ Prefab:
       value: 
       objectReference: {fileID: 1387308971}
     - target: {fileID: 11485020, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
+      propertyPath: creditsOverlay
+      value: 
+      objectReference: {fileID: 1882227484}
+    - target: {fileID: 11485020, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
       propertyPath: loseScore
       value: 
       objectReference: {fileID: 1022317086}
     - target: {fileID: 11485020, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
-      propertyPath: creditsOverlay
+      propertyPath: levelManager
       value: 
-      objectReference: {fileID: 1882227484}
+      objectReference: {fileID: 612774426}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b26544fb60014d408f1518f6541db6c, type: 2}
   m_IsPrefabParent: 0
@@ -782,7 +786,7 @@ Prefab:
     - target: {fileID: 11435588, guid: 9466180a04c294c498fed8a795af341b, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 612774426}
+      objectReference: {fileID: 413068698}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9466180a04c294c498fed8a795af341b, type: 2}
   m_IsPrefabParent: 0

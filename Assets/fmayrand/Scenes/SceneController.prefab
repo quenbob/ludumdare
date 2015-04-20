@@ -42,7 +42,9 @@ MonoBehaviour:
   menuOverlay: {fileID: 0}
   hudOverlay: {fileID: 0}
   loseOverlay: {fileID: 0}
+  creditsOverlay: {fileID: 0}
   loseScore: {fileID: 0}
+  levelManager: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

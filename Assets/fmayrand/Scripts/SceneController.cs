@@ -9,6 +9,7 @@ public class SceneController : MonoBehaviour {
 	[SerializeField] private GameObject loseOverlay;
 	[SerializeField] private GameObject creditsOverlay;
 	[SerializeField] private Text loseScore;
+	[SerializeField] private LevelManager levelManager;
 
 	private ScoreManager scoreManager;
 	private TimerManager timerManager;
@@ -64,6 +65,11 @@ public class SceneController : MonoBehaviour {
 		}
 
 		loseOverlay.SetActive(true);
+	}
+
+	public void RestartGame() {
+		scoreManager.currentScore = 0;
+		levelManager.LoadLevel("Level1");
 	}
 
 	public void ShowCredits() {

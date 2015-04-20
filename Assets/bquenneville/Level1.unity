@@ -296,6 +296,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnShowCredits
       objectReference: {fileID: 0}
+    - target: {fileID: 11488918, guid: 331aa6ee48ecfcb48859b0c18b603b6b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1287655108}
+    - target: {fileID: 11488918, guid: 331aa6ee48ecfcb48859b0c18b603b6b, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnResumeGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 331aa6ee48ecfcb48859b0c18b603b6b, type: 2}
   m_IsPrefabParent: 0

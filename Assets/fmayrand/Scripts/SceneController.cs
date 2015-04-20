@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour {
 
 	private ScoreManager scoreManager;
 	private TimerManager timerManager;
+	private bool isGameFinished = false;
 
 	void Start() {
 		GameObject managers = GameObject.Find("Managers");
@@ -36,6 +37,11 @@ public class SceneController : MonoBehaviour {
 
 	public void ResumeGame() {
 		Debug.Log("Resume game");
+		if (isGameFinished) {
+			EndGame();
+			return;
+		}
+
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(true);
 		loseOverlay.SetActive(false);
@@ -45,6 +51,7 @@ public class SceneController : MonoBehaviour {
 
 	public void EndGame() {
 		Debug.Log("End game");
+		isGameFinished = true;
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(false);
 		creditsOverlay.SetActive(false);

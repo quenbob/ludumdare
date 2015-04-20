@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &123420
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music and sound effects
+  m_Text: Music and Sound Effects
 --- !u!114 &11442334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .933823526, g: .164792374, b: .164792374, a: 1}
+  m_Color: {r: .87843138, g: .188235298, b: .23137255, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 755df87e8cd4e064eb1651667415d3a7, type: 3}
     m_FontSize: 60

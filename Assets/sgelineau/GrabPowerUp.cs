@@ -5,6 +5,8 @@ public class GrabPowerUp : MonoBehaviour {
 
 	public ParticleSystem pickUpEffect;
 
+	bool hasBeenPickedUp = false;
+
 	// Use this for initialization
 	void Start () {
 		pickUpEffect.Stop ();
@@ -17,12 +19,16 @@ public class GrabPowerUp : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Player") {
-			GameObject.Destroy(transform.Find("Model").gameObject);
-			transform.Find("PowerUpEffect 1").GetComponent<ParticleSystem>().Stop ();
-			pickUpEffect.Play ();
-			GameObject.Destroy(gameObject, 3);
+			if (!hasBeenPickedUp) {
+				hasBeenPickedUp = true;
 
-			GameObject.Find("Managers").GetComponent<TimerManager>().AddTime(10);
+				GameObject.Destroy (transform.Find ("Model").gameObject);
+				transform.Find ("PowerUpEffect 1").GetComponent<ParticleSystem> ().Stop ();
+				pickUpEffect.Play ();
+				GameObject.Destroy (gameObject, 3);
+
+				GameObject.Find ("Managers").GetComponent<TimerManager> ().AddTime (10);
+			}
 		}
 	}
 }

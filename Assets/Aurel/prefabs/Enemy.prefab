@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  sightRadius: 20
+  sightRadius: 10
 --- !u!114 &11496784
 MonoBehaviour:
   m_ObjectHideFlags: 1

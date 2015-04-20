@@ -38,6 +38,7 @@ public class EnemyAttack : MonoBehaviour
 	{
 		if (playerInRange)
 		{
+			GameObject.Destroy(GameObject.Find("Player"));
 			TimerManager timerManager = GameObject.Find ("Managers").GetComponent<TimerManager>();
 			timerManager.isGameOver = true;
 

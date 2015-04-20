@@ -28,7 +28,7 @@ public class GrabPowerUp : MonoBehaviour {
 				GameObject.Destroy (gameObject, 3);
 
 				GetComponent<AudioSource>().Play();
-				GameObject.Find ("Managers").GetComponent<TimerManager> ().AddTime (8);
+				GameObject.Find ("Managers").GetComponent<TimerManager> ().AddTime (10);
 			}
 		}
 	}

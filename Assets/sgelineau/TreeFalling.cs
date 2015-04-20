@@ -93,12 +93,6 @@ public class TreeFalling : MonoBehaviour {
 				if (scoreLabel) {
 					scoreLabel.GetComponent<ScoreManager>().AddScore(1);
 				}
-
-				// give the player more time
-				GameObject timerLabel = GameObject.Find("Managers");
-				if (timerLabel) {
-					timerLabel.GetComponent<TimerManager>().AddTime(timeAdded);
-				}
 			}
 		}
 	}

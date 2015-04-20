@@ -6,7 +6,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 
 	private bool isRunning = false;
 	private bool rightLegFirst = true;
-	GameObject enemyModel;
 	GameObject leftLeg;
 	GameObject rightLeg;
 	GameObject leftArm;
@@ -37,7 +36,6 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		enemyModel = transform.Find("Model").gameObject;
 		leftLeg = transform.Find("Model/BearMesh 1/BearLeftLeg").gameObject;
 		rightLeg = transform.Find("Model/BearMesh 1/BearRightLegs").gameObject;
 		leftArm = transform.Find("Model/BearMesh 1/BearLeftArm").gameObject;

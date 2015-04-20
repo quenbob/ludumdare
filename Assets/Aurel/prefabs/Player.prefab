@@ -579,8 +579,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: 177.992096, y: 9.99817085, z: 170.718994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420738}
@@ -1652,19 +1652,20 @@ MonoBehaviour:
   speed: 15
   turnSmoothing: 15
   canMove: 1
+  accelerometerSpeed: 1.5
 --- !u!114 &11447526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126276}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345dabf4ec5422845921fee1bce76ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: {fileID: 11486322}
-  speed: 10
+  shakingIntensity: 5
+  isShaking: 0
 --- !u!114 &11486322
 MonoBehaviour:
   m_ObjectHideFlags: 1

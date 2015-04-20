@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour {
 	[SerializeField] private GameObject menuOverlay;
 	[SerializeField] private GameObject hudOverlay;
 	[SerializeField] private GameObject loseOverlay;
+	[SerializeField] private GameObject creditsOverlay;
 	[SerializeField] private Text loseScore;
 
 	private ScoreManager scoreManager;
@@ -29,6 +30,7 @@ public class SceneController : MonoBehaviour {
 		menuOverlay.SetActive(true);
 		hudOverlay.SetActive(false);
 		loseOverlay.SetActive(false);
+		creditsOverlay.SetActive(false);
 		timerManager.Pause();
 	}
 
@@ -37,6 +39,7 @@ public class SceneController : MonoBehaviour {
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(true);
 		loseOverlay.SetActive(false);
+		creditsOverlay.SetActive(false);
 		timerManager.Resume();
 	}
 
@@ -44,6 +47,7 @@ public class SceneController : MonoBehaviour {
 		Debug.Log("End game");
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(false);
+		creditsOverlay.SetActive(false);
 
 		if (scoreManager.currentScore == 1) {
 			loseScore.text = "1 tree cut";
@@ -53,5 +57,12 @@ public class SceneController : MonoBehaviour {
 		}
 
 		loseOverlay.SetActive(true);
+	}
+
+	public void ShowCredits() {
+		menuOverlay.SetActive(false);
+		hudOverlay.SetActive(false);
+		loseOverlay.SetActive(false);
+		creditsOverlay.SetActive(true);
 	}
 }

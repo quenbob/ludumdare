@@ -8,4 +8,8 @@ public class MenuController : MonoBehaviour {
 	public void OnResumeGame() {
 		sceneController.ResumeGame();
 	}
+
+	public void OnShowCredits() {
+		sceneController.ShowCredits();
+	}
 }

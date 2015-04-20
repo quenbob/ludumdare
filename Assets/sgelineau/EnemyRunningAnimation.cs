@@ -4,37 +4,35 @@ using System.Collections;
 // should be named EnemyRunningAnimation
 public class EnemyRunningAnimation : MonoBehaviour {
 
-	public float legWigglePerSecond = 2.0f;
-	public float legExtentInDegrees = 45.0f;
-	public float bounceHeight = 0.1f;
-
 	private bool isRunning = false;
-
 	private bool rightLegFirst = true;
-	private float t = 0.0f;
-
-	private float lastWiggles = 0.0f;
-	private float targetWiggles = 0.0f;
-
 	GameObject enemyModel;
 	GameObject leftLeg;
 	GameObject rightLeg;
 	GameObject leftArm;
 	GameObject rightArm;
-	private float origHeight;
+	float origHeight;
+	Quaternion originLeftArmRotation;
+	Quaternion originRightArmRotation;
+	Quaternion originLeftLegRotation;
+	Quaternion originRigheLegRotation;
+	private float totalRotation = 0.0f; 
 
 	public void startRunning() {
 		if (!isRunning) {
-			t = 0;
+			totalRotation = 0.0f;
 			isRunning = true;
-			rightLegFirst = !rightLegFirst;
+			rightLegFirst = true;
 		}
 	}
 	
 	public void stopRunning() {
 		if (isRunning) {
-			targetWiggles = 0.0f; //Mathf.Ceil(lastWiggles*2)/2;
 			isRunning = false;
+			leftArm.transform.localRotation = originLeftArmRotation;
+			rightArm.transform.localRotation = originRightArmRotation;
+			leftLeg.transform.localRotation = originLeftLegRotation;
+			rightLeg.transform.localRotation = originRigheLegRotation;
 		}
 	}
 	
@@ -46,26 +44,31 @@ public class EnemyRunningAnimation : MonoBehaviour {
 		leftArm = transform.Find("Model/BearMesh 1/BearLeftArm").gameObject;
 		rightArm = transform.Find("Model/BearMesh 1/BearBody/BearRightArm").gameObject;
 		origHeight = enemyModel.transform.position.y;
+		originLeftArmRotation = leftArm.transform.localRotation;
+		originRightArmRotation = rightArm.transform.localRotation;
+		originLeftLegRotation = leftLeg.transform.localRotation;
+		originRigheLegRotation = rightLeg.transform.localRotation;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		float wiggles;
-		if (isRunning) {
-			t += Time.deltaTime;
-			wiggles = legWigglePerSecond * t;
-		} else {
-			wiggles = lastWiggles + (targetWiggles - lastWiggles) * 0.5f;
+		float angle = ((rightLegFirst) ? 1 : -1) * 3.0f;
+		totalRotation += angle * Time.deltaTime;
+		if(totalRotation > 1.3f && rightLegFirst)
+		{
+			rightLegFirst = false;
+		}
+		else if (totalRotation < -0.5f && !rightLegFirst)
+		{
+			rightLegFirst = true;
 		}
 
-		lastWiggles = wiggles;
-		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees;
-		float height = origHeight + Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
+		Debug.Log(totalRotation);
 
-		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height, enemyModel.transform.position.z);
-		leftLeg.transform.rotation = Quaternion.Euler(new Vector3 (angle-30, 0, 0));
-		rightLeg.transform.rotation = Quaternion.Euler(new Vector3 (-angle-30, 0, 0));
-		leftArm.transform.rotation = Quaternion.Euler(new Vector3 (-angle-70, 0, 0));
-		rightArm.transform.rotation = Quaternion.Euler(new Vector3 (angle-70, 0, 0));
+		float value = 50.0f * Time.deltaTime * ((rightLegFirst) ? 1 : -1);
+		leftLeg.transform.Rotate(new Vector3 (angle, 0.0f, 0.0f));
+		rightLeg.transform.Rotate(new Vector3 (-angle, 0.0f, 0.0f));
+		leftArm.transform.Rotate(new Vector3 (-angle/1.5f, 0.0f, 0.0f));
+		rightArm.transform.Rotate(new Vector3 (angle/1.5f, 0.0f, 0.0f));
 	}
 }

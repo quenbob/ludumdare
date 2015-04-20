@@ -256,7 +256,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476736, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -.707106829
       objectReference: {fileID: 0}
     - target: {fileID: 476736, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
       propertyPath: m_LocalRotation.z
@@ -264,7 +264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476736, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .707106709
       objectReference: {fileID: 0}
     - target: {fileID: 476736, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
       propertyPath: m_RootOrder
@@ -273,6 +273,26 @@ Prefab:
     - target: {fileID: 147074, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465744, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496784, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438620, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+      propertyPath: legWigglePerSecond
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438620, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+      propertyPath: legExtentInDegrees
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438620, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}
+      propertyPath: bounceHeight
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 811f24b96a8ff4a46b766fe3af0c5096, type: 2}

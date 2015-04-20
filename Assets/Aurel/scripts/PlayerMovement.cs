@@ -21,13 +21,17 @@ public class PlayerMovement : MonoBehaviour
 	void Start () 
 	{
 		playerRigidbody = GetComponent<Rigidbody>();
-		timeManager = GameObject.Find("Managers").GetComponent<TimerManager>();
+
+		GameObject managers = GameObject.Find("Managers");
+		if (managers)
+			timeManager = GameObject.Find("Managers").GetComponent<TimerManager>();
+
 		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate()
 	{
-		if (!canMove || timeManager.isPaused) {
+		if (!canMove || (timeManager && timeManager.isPaused)) {
 			return;
 		}
 

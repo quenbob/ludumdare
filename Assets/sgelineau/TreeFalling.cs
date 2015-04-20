@@ -24,7 +24,7 @@ public class TreeFalling : MonoBehaviour {
 				if(value == true)
 				{
 					Invoke("StartSound", timeBeforeSound);
-					DustParticleSystem.Play ();
+
 					
 				}
 			}
@@ -100,6 +100,7 @@ public class TreeFalling : MonoBehaviour {
 
 	void StartSound()
 	{
+		DustParticleSystem.Play ();
 		if(fallAudio)
 			fallAudio.Play();
 	}

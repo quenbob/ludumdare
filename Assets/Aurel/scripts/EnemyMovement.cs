@@ -20,6 +20,13 @@ public class EnemyMovement : MonoBehaviour {
 	private ParticleSystem fireParticleSystem;
 	private EnemyRunningAnimation enemyRunningAnimation;
 
+	public float timeToFlameUp = 1.0f;
+	public float timeBetweenLoops = 3.0f;
+	private AudioSource[] flameAudio;
+	private float soundTimer;
+	private bool isPlayingSound = false;
+	private bool hasFlamedUp = false;
+
 	public bool isOnFire() {
 		return (currentState == StateEnum.follow);
 	}
@@ -35,6 +42,8 @@ public class EnemyMovement : MonoBehaviour {
 
 		enemyRunningAnimation = GetComponent<EnemyRunningAnimation> ();
 		enemyRunningAnimation.startRunning ();
+
+		flameAudio = GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -61,6 +70,11 @@ public class EnemyMovement : MonoBehaviour {
 					currentState = StateEnum.follow;
 					fireParticleSystem.Play();
 					enemyRunningAnimation.startRunning();
+
+					isPlayingSound = true;
+					soundTimer = 0;
+					flameAudio[0].Play ();
+
 					return;
 				}
 			}
@@ -110,6 +124,25 @@ public class EnemyMovement : MonoBehaviour {
 				enemyRunningAnimation.stopRunning();
 				Stop();
 			}
+		}
+
+		soundTimer += Time.deltaTime;
+		if (currentState == StateEnum.follow && isPlayingSound) {
+			if (!hasFlamedUp) {
+				if (soundTimer >= timeToFlameUp) {
+					hasFlamedUp = true;
+					soundTimer = 0;
+					flameAudio[1].Play ();
+				}
+			} else {
+				if (soundTimer >= timeBetweenLoops) {
+					soundTimer = 0;
+					flameAudio[1].Play ();
+				}
+			}
+		} else {
+			isPlayingSound = false;
+			hasFlamedUp = false;
 		}
 	}
 

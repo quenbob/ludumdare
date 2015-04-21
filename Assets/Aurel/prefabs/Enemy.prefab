@@ -521,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 178.100006, y: 10, z: 192.800003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414458}
@@ -1280,6 +1280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561bc02bcd78b0b4fa4cfb00f1631d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  legWigglePerSecond: 2
+  legExtentInDegrees: 45
+  bounceHeight: .100000001
+  isRunning: 0
 --- !u!114 &11465744
 MonoBehaviour:
   m_ObjectHideFlags: 1

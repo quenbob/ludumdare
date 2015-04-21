@@ -96,7 +96,7 @@ public class EnemyMovement : MonoBehaviour {
 				{
 					currentState = StateEnum.follow;
 					fireParticleSystem.Play();
-					enemyRunningAnimation.startRunning();
+					enemyRunningAnimation.startRunning(true);
 
 					isPlayingSound = true;
 					soundTimer = 0;
@@ -183,7 +183,7 @@ public class EnemyMovement : MonoBehaviour {
 		firstMove = false;
 		currentState = StateEnum.walk;
 		fireParticleSystem.Stop();
-		enemyRunningAnimation.startRunning();
+		enemyRunningAnimation.startRunning(currentState == StateEnum.follow);
 
 		if (!nav.isActiveAndEnabled)
 			nav.enabled = true;

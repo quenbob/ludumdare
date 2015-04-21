@@ -62,7 +62,7 @@ public class EnemyRunningAnimation : MonoBehaviour {
 		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees + offset;
 		float height = Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
 
-		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height, enemyModel.transform.position.z);
+		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height + 10.0f, enemyModel.transform.position.z);
 		leftLeg.transform.localRotation = Quaternion.Euler(new Vector3 (angle, 0.0f, 0.0f));
 		rightLeg.transform.localRotation = Quaternion.Euler(new Vector3 (180.0f-angle, 0.0f, 0.0f));
 		leftArm.transform.localRotation = Quaternion.Euler(new Vector3 (angle, 0.0f, 0.0f));

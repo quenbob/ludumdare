@@ -11,6 +11,31 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	public StateEnum currentState = StateEnum.idle;
 	public float sightRadius = 50.0f;
+	public float timeMinBetweenDirectionChanges = 2.0f;
+	public float timeMinBeforeMoveWhenIdle = 1.0f;
+	public float chanceToTurnIfItIsMoving = 5.0f;
+	private float mchanceToTurnIfItIsMoving
+	{
+		get { return 100.0f - chanceToTurnIfItIsMoving;}
+	}
+
+	public float chanceToMoveAfterCreation = 50.0f;
+	private float mchanceToMoveAfterCreation
+	{
+		get { return 100.0f - chanceToMoveAfterCreation;}
+	}
+
+	public float chanceToMoveItItIsIdle = 33.0f;
+	private float mchanceToMoveItItIsIdle
+	{
+		get { return 100.0f - chanceToMoveItItIsIdle;}
+	}
+
+	public float chanceToStopItItIsMoving = 3.0f;
+	private float mchanceToStopItItIsMoving
+	{
+		get { return chanceToStopItItIsMoving;}
+	}
 
 	private Vector3 movement;
 	private Transform player;
@@ -26,6 +51,7 @@ public class EnemyMovement : MonoBehaviour {
 	private float soundTimer;
 	private bool isPlayingSound = false;
 	private bool hasFlamedUp = false;
+	private bool firstMove = true;
 
 	public bool isOnFire() {
 		return (currentState == StateEnum.follow);
@@ -40,8 +66,9 @@ public class EnemyMovement : MonoBehaviour {
 		fireParticleSystem = transform.Find ("Fire Continuous").GetComponent<ParticleSystem> ();
 		fireParticleSystem.Pause ();
 
+		// Enemy starts idle
 		enemyRunningAnimation = GetComponent<EnemyRunningAnimation> ();
-		enemyRunningAnimation.startRunning ();
+		Stop();
 
 		flameAudio = GetComponents<AudioSource>();
 	}
@@ -79,13 +106,14 @@ public class EnemyMovement : MonoBehaviour {
 				}
 			}
 
-			if (timeSinceLastChange > 3.0f)
+			// We wait at least 3 sec between two state or destination changes, except if it is its first move
+			if ((timeSinceLastChange > timeMinBetweenDirectionChanges && currentState == StateEnum.walk) || (timeSinceLastChange > timeMinBeforeMoveWhenIdle && currentState == StateEnum.idle) || firstMove)
 			{
-			int whatNext = Random.Range(0, 100);
-			if (whatNext > 95)
-				ChangeDirection();
-			else if (whatNext < 5)
-				Stop();
+				int whatNext = Random.Range(0, 100);
+				if (whatNext > mchanceToTurnIfItIsMoving || (firstMove && whatNext > mchanceToMoveAfterCreation) || (currentState == StateEnum.idle && whatNext > mchanceToMoveItItIsIdle))
+					ChangeDirection();
+				else if (whatNext < mchanceToStopItItIsMoving)
+					Stop(); 
 			}
 			else
 			{
@@ -93,7 +121,12 @@ public class EnemyMovement : MonoBehaviour {
 			}
 
 			if (nav.isActiveAndEnabled)
+			{
 				nav.SetDestination(movement);
+
+				if(Vector3.Distance(movement, transform.position) < 1.0f)
+					Stop ();
+			}
 		}
 		else
 		{
@@ -119,9 +152,7 @@ public class EnemyMovement : MonoBehaviour {
 			}
 			else
 			{
-				currentState = StateEnum.idle;
 				fireParticleSystem.Stop();
-				enemyRunningAnimation.stopRunning();
 				Stop();
 			}
 		}
@@ -149,6 +180,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void ChangeDirection()
 	{
+		firstMove = false;
 		currentState = StateEnum.walk;
 		fireParticleSystem.Stop();
 		enemyRunningAnimation.startRunning();
@@ -162,6 +194,10 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void Stop()
 	{
+		currentState = StateEnum.idle;
+		enemyRunningAnimation.stopRunning();
+		movement = transform.position;
+		
 		if (nav.isActiveAndEnabled)
 			nav.enabled = false;
 

@@ -20,7 +20,7 @@ public class EnemyAttack : MonoBehaviour
 			playerInRange = true;
 		} else if (other.tag == "Tree") {
 			if (GetComponent<EnemyMovement>().isOnFire()) {
-				other.GetComponent<TreeScript>().SetThisOnFire();
+				other.GetComponentInParent<TreeScript>().SetThisOnFire();
 			}
 		}
 	}

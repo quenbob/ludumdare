@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,10 +14,12 @@ public class TreeScript : MonoBehaviour {
 	private int numberOfFiresStarted = 0;
 	private bool fireStarted = false;
 	private ParticleSystem OnFireParticleSystem;
+	private Transform TreeTopTr;
 
 	// Use this for initialization
 	void Awake () {
 		initParticule ();
+		initTreeTopTr();
 	}
 
 	private void initParticule()
@@ -32,6 +34,12 @@ public class TreeScript : MonoBehaviour {
 					OnFireParticleSystem = treefire.GetComponent<ParticleSystem> ();
 			}
 		}
+	}
+
+	private void initTreeTopTr()
+	{
+		if (!TreeTopTr)
+			TreeTopTr = transform.Find ("Model/Grown/Tree model/FireHandle");
 	}
 
 
@@ -60,6 +68,7 @@ public class TreeScript : MonoBehaviour {
 			}
 			else if((Time.time - FireStartedTime)>BurnLifetime) {
 				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(1.0f,0.0f,0.0f),false);
+				OnFireParticleSystem.gameObject.transform.position = Vector3.Lerp(OnFireParticleSystem.gameObject.transform.position, TreeTopTr.position, 10.0f * Time.deltaTime);
 			}
 
 			if(numberOfFiresStarted < MaxTreesToBurn)

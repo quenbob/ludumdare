@@ -3,9 +3,18 @@ using System.Collections;
 
 // should be named EnemyRunningAnimation
 public class EnemyRunningAnimation : MonoBehaviour {
+	public float legWigglePerSecond = 2.0f;
+	public float legExtentInDegrees = 45.0f;
+	public float bounceHeight = 0.1f;
+	private float offset = -90.0f;
 
-	private bool isRunning = false;
+	public bool isRunning = false;
 	private bool rightLegFirst = true;
+	private float t = 0.0f;
+	private float lastWiggles = 0.0f;
+	private float targetWiggles = 0.0f;
+
+	GameObject enemyModel;
 	GameObject leftLeg;
 	GameObject rightLeg;
 	GameObject leftArm;
@@ -14,54 +23,49 @@ public class EnemyRunningAnimation : MonoBehaviour {
 	Quaternion originRightArmRotation;
 	Quaternion originLeftLegRotation;
 	Quaternion originRigheLegRotation;
-	private float totalRotation = 0.0f; 
 
 	public void startRunning() {
 		if (!isRunning) {
-			totalRotation = 0.0f;
+			t = 0.0f;
 			isRunning = true;
-			rightLegFirst = true;
+			rightLegFirst = !rightLegFirst;
 		}
 	}
 	
 	public void stopRunning() {
 		if (isRunning) {
+			targetWiggles = Mathf.Ceil(lastWiggles*2)/2;
 			isRunning = false;
-			leftArm.transform.localRotation = originLeftArmRotation;
-			rightArm.transform.localRotation = originRightArmRotation;
-			leftLeg.transform.localRotation = originLeftLegRotation;
-			rightLeg.transform.localRotation = originRigheLegRotation;
 		}
 	}
 	
 	// Use this for initialization
 	void Start () {
+		enemyModel = transform.Find("Model").gameObject;
 		leftLeg = transform.Find("Model/BearMesh 1/BearLeftLeg").gameObject;
 		rightLeg = transform.Find("Model/BearMesh 1/BearRightLegs").gameObject;
 		leftArm = transform.Find("Model/BearMesh 1/BearLeftArm").gameObject;
 		rightArm = transform.Find("Model/BearMesh 1/BearBody/BearRightArm").gameObject;
-		originLeftArmRotation = leftArm.transform.localRotation;
-		originRightArmRotation = rightArm.transform.localRotation;
-		originLeftLegRotation = leftLeg.transform.localRotation;
-		originRigheLegRotation = rightLeg.transform.localRotation;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		float angle = ((rightLegFirst) ? 1 : -1) * 3.0f;
-		totalRotation += angle * Time.deltaTime;
-		if(totalRotation > 1.3f && rightLegFirst)
-		{
-			rightLegFirst = false;
-		}
-		else if (totalRotation < -0.5f && !rightLegFirst)
-		{
-			rightLegFirst = true;
+		float wiggles;
+		if (isRunning) {
+			t += Time.deltaTime;
+			wiggles = legWigglePerSecond * t;
+		} else {
+			wiggles = lastWiggles + (targetWiggles - lastWiggles) * 0.5f;
 		}
 
-		leftLeg.transform.Rotate(new Vector3 (angle, 0.0f, 0.0f));
-		rightLeg.transform.Rotate(new Vector3 (-angle, 0.0f, 0.0f));
-		leftArm.transform.Rotate(new Vector3 (-angle/1.5f, 0.0f, 0.0f));
-		rightArm.transform.Rotate(new Vector3 (angle/1.5f, 0.0f, 0.0f));
+		lastWiggles = wiggles;
+		float angle = (rightLegFirst ? 1 : -1) * Mathf.Sin (wiggles * 2*Mathf.PI) * legExtentInDegrees + offset;
+		float height = Mathf.Abs (Mathf.Sin (wiggles * 2*Mathf.PI) * bounceHeight);
+
+		enemyModel.transform.position = new Vector3(enemyModel.transform.position.x, height, enemyModel.transform.position.z);
+		leftLeg.transform.localRotation = Quaternion.Euler(new Vector3 (angle, 0.0f, 0.0f));
+		rightLeg.transform.localRotation = Quaternion.Euler(new Vector3 (180.0f-angle, 0.0f, 0.0f));
+		leftArm.transform.localRotation = Quaternion.Euler(new Vector3 (angle, 0.0f, 0.0f));
+		rightArm.transform.localRotation = Quaternion.Euler(new Vector3 (270.0f-angle, 0.0f, 0.0f));
 	}
 }

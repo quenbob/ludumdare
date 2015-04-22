@@ -45,8 +45,11 @@ public class TreeScript : MonoBehaviour {
 
 	public void SetThisOnFire()
 	{
-		initParticule ();
-		TreeOnFire = true;
+		if (!GetComponentInChildren<TreeFalling>().isDying)
+		{
+			initParticule ();
+			TreeOnFire = true;
+		}
 	}
 	
 	// Update is called once per frame

@@ -67,6 +67,11 @@ public class TreeState : MonoBehaviour {
 				t = 0;
 				isSprouting = true;
 				animationPhase = 0;
+
+				if (useGrownModelAsSproutModel)
+					grown.transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);
+				else
+					sprout.transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);
 			}
 
 			privateState = value;

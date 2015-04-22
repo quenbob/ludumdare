@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreeOnFire: 0
-  TimeToBurnOthers: 20
+  TimeToBurnOthers: 15
   MaxTreesToBurn: 2
   FireRadius: 15
   BurnLifetime: 20

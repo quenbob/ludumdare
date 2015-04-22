@@ -15,7 +15,7 @@ public class TreeFalling : MonoBehaviour {
 
 	private AudioSource fallAudio;
 	bool misDying = false;
-	bool isDying
+	public bool isDying
 	{
 		get { return misDying; }
 		set

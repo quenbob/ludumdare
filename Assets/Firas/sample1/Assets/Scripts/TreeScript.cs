@@ -6,20 +6,27 @@ public class TreeScript : MonoBehaviour {
 
 	public bool TreeOnFire = false;
 	public float TimeToBurnOthers = 7.0f;
-	public int MaxTreesToBurn = 2;
+	public int MinTreesToBurn = 1;
+	public int MaxTreesToBurn = 3;
 	public float FireRadius = 15.0f;
-	public float BurnLifetime = 20.0f;
+	public float MinBurnLifetime = 18.0f;
+	public float MaxBurnLifetime = 22.0f;
 
 	private float FireStartedTime = -1.0f;
 	private int numberOfFiresStarted = 0;
 	private bool fireStarted = false;
 	private ParticleSystem OnFireParticleSystem;
 	private Transform TreeTopTr;
+	private int treeToBurn;
+	private float BurnLifetime;
 
 	// Use this for initialization
 	void Awake () {
 		initParticule ();
 		initTreeTopTr();
+
+		treeToBurn = Random.Range(MinTreesToBurn, MaxTreesToBurn);
+		BurnLifetime = Random.Range(MinBurnLifetime, MaxBurnLifetime);
 	}
 
 	private void initParticule()
@@ -70,11 +77,11 @@ public class TreeScript : MonoBehaviour {
 
 			}
 			else if((Time.time - FireStartedTime)>BurnLifetime) {
-				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(1.0f,0.0f,0.0f),false);
+				GetComponentInChildren<TreeFalling>().cutDownFrom(new Vector3(Random.Range(-10000.0f, 10000.0f),10.0f,Random.Range(-10000.0f, 10000.0f)),false);
 				OnFireParticleSystem.gameObject.transform.position = Vector3.Lerp(OnFireParticleSystem.gameObject.transform.position, TreeTopTr.position, 10.0f * Time.deltaTime);
 			}
 
-			if(numberOfFiresStarted < MaxTreesToBurn)
+			if(numberOfFiresStarted < treeToBurn)
 			{
 				if((Time.time - FireStartedTime) > (TimeToBurnOthers * (numberOfFiresStarted+1)))
 				{
@@ -93,7 +100,7 @@ public class TreeScript : MonoBehaviour {
 								
 								numberOfFiresStarted = numberOfFiresStarted + 1;
 								
-								if(MaxTreesToBurn<numberOfFiresStarted)
+								if(treeToBurn<numberOfFiresStarted)
 								{
 									break;
 								}

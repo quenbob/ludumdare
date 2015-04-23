@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		if (!canMove || (timeManager && timeManager.isPaused)) {
+			anim.SetBool ("isWalking", false);
 			return;
 		}
 

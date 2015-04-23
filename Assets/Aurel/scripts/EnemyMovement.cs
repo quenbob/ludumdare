@@ -75,13 +75,17 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (timeManager.isPaused && nav.isActiveAndEnabled)
+		if (timeManager.isPaused)
 		{
-			nav.enabled = false;
+			enemyRunningAnimation.stopRunning();
+			if (nav.isActiveAndEnabled)
+				nav.enabled = false;
+
 			return;
 		}
 		else if (!nav.isActiveAndEnabled && currentState != StateEnum.idle)
 		{
+			enemyRunningAnimation.startRunning();
 			nav.enabled = true;
 		}
 

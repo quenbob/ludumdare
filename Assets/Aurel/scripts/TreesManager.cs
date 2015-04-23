@@ -34,7 +34,7 @@ public class TreesManager : MonoBehaviour {
 	
 	void Spawn () 
 	{
-		if(!canSpawn || (timeManager && timeManager.isGameOver == true))
+		if(!canSpawn || (timeManager && (timeManager.isGameOver == true || timeManager.isPaused == true)))
 		{
 			return;
 		}

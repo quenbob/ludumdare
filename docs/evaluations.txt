@@ -30,7 +30,7 @@ Fun – 3
 Theme – 4
 Graphics – 5
 Audio – 5
-Humor – 2
+Humor – N/A
 Mood – 5
 Overall - 4
 
@@ -43,7 +43,7 @@ Fun – 4
 Theme – 3
 Graphics – 5
 Audio – 5
-Humor – 1
+Humor – N/A
 Mood – 4
 Overall - 4
 
@@ -55,7 +55,7 @@ Innovation – 4
 Fun – 3
 Theme – 5
 Graphics – 4
-Audio – 0
+Audio – N/A
 Humor – 3
 Mood – 3
 Overall - 3

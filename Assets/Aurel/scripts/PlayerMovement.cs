@@ -11,13 +11,17 @@ public class PlayerMovement : MonoBehaviour
 
 	private Vector3 movement;
 	private Rigidbody playerRigidbody;
-	private PlayerAttack playerAttack;
 	private float recordedH = 0.0f;
 	private float recordedV = 0.0f;
 	private bool recorded = false;
 	private Animator anim;
 	private TimerManager timeManager;
 
+
+
+	public float movementSpeed = 10.0f;
+	public float turningSpeed = 100.0f;
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -36,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
 			return;
 		}
 
-		updateMove();
+		//updateMove();
+
+		float h = Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime;
+		transform.Rotate(0, h, 0);
+		
+		float v = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+		transform.Translate(0, 0, v);
+
+		anim.SetBool ("isWalking", (v != 0.0f && !recorded));
 	}
 	
 	void updateMove() {

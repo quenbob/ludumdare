@@ -50,10 +50,23 @@ public class PlayerMovement : MonoBehaviour
 			if((h > 0 && h < accelerometerDeadZone) || (h < 0 && h > -accelerometerDeadZone)) {
 				h = 0f;
 			}
+
+			if(h > 0)
+				h -= accelerometerDeadZone;
+			
+			if(h < 0)
+				h += accelerometerDeadZone;
 			
 			if((v > 0 && v < accelerometerDeadZone) || (v < 0 && v > -accelerometerDeadZone)) {
 				v = 0f;
 			}
+			
+			if(v > 0)
+				v -= accelerometerDeadZone;
+			
+			if(v < 0)
+				v += accelerometerDeadZone;
+
 		} else {
 			h = Input.GetAxisRaw("Horizontal");
 			v = Input.GetAxisRaw("Vertical");

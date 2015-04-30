@@ -15,6 +15,10 @@ public class SceneController : MonoBehaviour {
 	private ScoreManager scoreManager;
 	private TimerManager timerManager;
 	private bool isGameFinished = false;
+	private bool isGamePaused = false;
+	private bool isGameCredits = false;
+
+	private float previousActionTime = 0.0f;
 
 	void Start() {
 		GameObject managers = GameObject.Find("Managers");
@@ -23,6 +27,12 @@ public class SceneController : MonoBehaviour {
 	}
 
 	void Update() {
+
+		if (Input.GetTouch (0).tapCount == 1 && Time.realtimeSinceStartup - previousActionTime > 0.5) {
+			if((!isGamePaused && !isGameFinished) || isGameCredits)
+				PauseGame();
+		}
+
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			PauseGame();
 		}
@@ -30,6 +40,8 @@ public class SceneController : MonoBehaviour {
 
 	public void PauseGame() {
 		Debug.Log("Pause game");
+		isGamePaused = true;
+		isGameCredits = false;
 		menuOverlay.SetActive(true);
 		hudOverlay.SetActive(false);
 		loseOverlay.SetActive(false);
@@ -38,6 +50,8 @@ public class SceneController : MonoBehaviour {
 	}
 
 	public void ResumeGame() {
+		isGamePaused = false;
+		previousActionTime = Time.realtimeSinceStartup;
 		Debug.Log("Resume game");
 		if (isGameFinished) {
 			menuOverlay.SetActive(false);
@@ -80,6 +94,8 @@ public class SceneController : MonoBehaviour {
 	}
 
 	public void ShowCredits() {
+		isGameCredits = true;
+		previousActionTime = Time.realtimeSinceStartup;
 		menuOverlay.SetActive(false);
 		hudOverlay.SetActive(false);
 		loseOverlay.SetActive(false);
